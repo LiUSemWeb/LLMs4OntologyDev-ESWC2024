@@ -1,0 +1,56 @@
+@prefix : <http://www.example.org/test#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Cl_Festival a rdfs:Class .
+:Cl_City a rdfs:Class .
+:Cl_Theatre a rdfs:Class ; rdfs:subClassOf :Cl_City .
+:Cl_Play a rdfs:Class .
+:Cl_Author a rdfs:Class ; rdfs:subClassOf :Cl_Person .
+:Cl_Production a rdfs:Class .
+:Cl_Actor a rdfs:Class ; rdfs:subClassOf :Cl_Person .
+:Cl_Review a rdfs:Class .
+:Cl_Newspaper a rdfs:Class .
+:Cl_Role a rdfs:Class .
+:Cl_Person a rdfs:Class .
+:Cl_Ensemble a rdfs:Class .
+:Cl_ActorRoleInProductionAtTime a rdfs:Class .
+:Cl_EnsembleMembersAtTime a rdfs:Class .
+:Cl_ProductionReviewByNewspaper a rdfs:Class .
+
+:hasDate a owl:DatatypeProperty ; rdfs:domain :Cl_Festival ; rdfs:range xsd:date .
+:locatedIn a owl:ObjectProperty ; rdfs:domain :Cl_Theatre ; rdfs:range :Cl_City .
+:isPartOf a owl:ObjectProperty ; rdfs:domain :Cl_City ; rdfs:range :Cl_Country .
+:hasPlay a owl:ObjectProperty ; rdfs:domain :Cl_Festival ; rdfs:range :Cl_Play .
+:writtenBy a owl:ObjectProperty ; rdfs:domain :Cl_Play ; rdfs:range :Cl_Author .
+:hasAuthor a owl:ObjectProperty ; rdfs:domain :Cl_Play ; rdfs:range :Cl_Author .
+:hasActCount a owl:DatatypeProperty ; rdfs:domain :Cl_Play ; rdfs:range xsd:integer .
+:hasPremier a owl:DatatypeProperty ; rdfs:domain :Cl_Production ; rdfs:range xsd:date .
+:employedSince a owl:DatatypeProperty ; rdfs:domain :Cl_Actor ; rdfs:range xsd:date .
+
+:actorInRole a owl:ObjectProperty ; rdfs:domain :Cl_ActorRoleInProductionAtTime ; rdfs:range :Cl_Actor .
+:productionOfRole a owl:ObjectProperty ; rdfs:domain :Cl_ActorRoleInProductionAtTime ; rdfs:range :Cl_Production .
+:timeOfRole a owl:DatatypeProperty ; rdfs:domain :Cl_ActorRoleInProductionAtTime ; rdfs:range xsd:date .
+
+:ensembleInTime a owl:ObjectProperty ; rdfs:domain :Cl_EnsembleMembersAtTime ; rdfs:range :Cl_Ensemble .
+:memberInEnsemble a owl:ObjectProperty ; rdfs:domain :Cl_EnsembleMembersAtTime ; rdfs:range :Cl_Actor .
+:timeOfEnsemble a owl:DatatypeProperty ; rdfs:domain :Cl_EnsembleMembersAtTime ; rdfs:range xsd:date .
+
+:productionReviewed a owl:ObjectProperty ; rdfs:domain :Cl_ProductionReviewByNewspaper ; rdfs:range :Cl_Production .
+:newspaperGivingReview a owl:ObjectProperty ; rdfs:domain :Cl_ProductionReviewByNewspaper ; rdfs:range :Cl_Newspaper .
+:starRating a owl:DatatypeProperty ; rdfs:domain :Cl_ProductionReviewByNewspaper ; rdfs:range xsd:integer .
+
+:roleInPlay a owl:ObjectProperty ; rdfs:domain :Cl_Role ; rdfs:range :Cl_Play .
+:isMemberOf a owl:ObjectProperty ; rdfs:domain :Cl_Actor ; rdfs:range :Cl_Ensemble .
+:hasEnsemble a owl:ObjectProperty ; rdfs:domain :Cl_Production ; rdfs:range :Cl_Ensemble .
+:partOfEnsemble a owl:ObjectProperty ; rdfs:domain :Cl_Actor ; rdfs:range :Cl_Ensemble .
+:hasSpecialGuest a owl:ObjectProperty ; rdfs:domain :Cl_Production ; rdfs:range :Cl_Actor .
+:givenRatingBy a owl:ObjectProperty ; rdfs:domain :Cl_Production ; rdfs:range :Cl_ProductionReviewByNewspaper .
+
+:Cl_Production rdfs:subClassOf [ rdf:type owl:Restriction ; owl:onProperty :hasPremier ; owl:cardinality 1 ] .
+
+
+
+
+# DatatypeProperty

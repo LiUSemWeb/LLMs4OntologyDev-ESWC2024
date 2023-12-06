@@ -1,0 +1,97 @@
+@prefix : <http://www.example.org/test#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+:Cl_Band a rdfs:Class .
+:Cl_Member a rdfs:Class .
+:Cl_Instrument a rdfs:Class .
+:Cl_Album a rdfs:Class .
+:Cl_Track a rdfs:Class .
+:Cl_Song a rdfs:Class .
+:Cl_Critic a rdfs:Class .
+:Cl_Performance a rdfs:Class .
+:Cl_City a rdfs:Class .
+:Cl_Region a rdfs:Class .
+:Cl_Country a rdfs:Class .
+
+:Cl_Vocalist a rdfs:Class ;
+    rdfs:subClassOf :Cl_Member .
+:Cl_Guitarist a rdfs:Class ;
+    rdfs:subClassOf :Cl_Member .
+:Cl_Drummer a rdfs:Class ;
+    rdfs:subClassOf :Cl_Member .
+
+:playsInstrument a rdf:Property ;
+    rdfs:domain :Cl_Member ;
+    rdfs:range :Cl_Instrument .
+:memberOfBand a rdf:Property ;
+    rdfs:domain :Cl_Member ;
+    rdfs:range :Cl_Band .
+:recordedAlbum a rdf:Property ;
+    rdfs:domain :Cl_Band ;
+    rdfs:range :Cl_Album .
+:containsTrack a rdf:Property ;
+    rdfs:domain :Cl_Album ;
+    rdfs:range :Cl_Track .
+:composedSong a rdf:Property ;
+    rdfs:domain :Cl_Member ;
+    rdfs:range :Cl_Song .
+:criticReview a rdf:Property ;
+    rdfs:domain :Cl_Critic ;
+    rdfs:range :Cl_Album .
+:performedIn a rdf:Property ;
+    rdfs:domain :Cl_Band ;
+    rdfs:range :Cl_Performance .
+:locatedIn a rdf:Property ;
+    rdfs:domain :Cl_City ;
+    rdfs:range :Cl_Region .
+
+:composedDate a rdf:Property ;
+    rdfs:domain :Cl_Song ;
+    rdfs:range xsd:date .
+
+:Cl_City a rdfs:Class ;
+    rdfs:subClassOf :Cl_Region .
+:Cl_Region a rdfs:Class ;
+    rdfs:subClassOf :Cl_Country .
+
+:Cl_Album a rdfs:Class ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty :containsTrack ;
+        owl:minCardinality 1
+    ] .
+
+:Cl_BandMemberRole a rdfs:Class .
+
+:hasRole a rdf:Property ;
+    rdfs:domain :Cl_Member ;
+    rdfs:range :Cl_BandMemberRole .
+
+:inBand a rdf:Property ;
+    rdfs:domain :Cl_BandMemberRole ;
+    rdfs:range :Cl_Band .
+
+:atTime a rdf:Property ;
+    rdfs:domain :Cl_BandMemberRole ;
+    rdfs:range xsd:dateTime .
+
+:Cl_Member owl:equivalentClass [
+    a owl:Class ;
+    owl:unionOf (:Cl_Vocalist :Cl_Guitarist :Cl_Drummer)
+] .
+
+:Cl_Instrument owl:disjointWith :Cl_Album .
+:Cl_Track owl:disjointWith :Cl_Song .
+
+:memberOfBand a rdf:Property ;
+    rdfs:domain :Cl_Member ;
+    rdfs:range :Cl_Band ;
+    owl:inverseOf :hasMember .
+
+:hasMember a rdf:Property ;
+    rdfs:domain :Cl_Band ;
+    rdfs:range :Cl_Member ;
+    owl:inverseOf :memberOfBand .

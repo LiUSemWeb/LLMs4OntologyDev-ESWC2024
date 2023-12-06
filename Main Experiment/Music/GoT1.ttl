@@ -1,0 +1,600 @@
+# *******************
+# output of plan 1:
+# @prefix : <http://www.example.org/test#> .
+# @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# :Cl_Person a rdfs:Class .
+# :Cl_Band a rdfs:Class .
+# :Cl_Instrument a rdfs:Class .
+# :Cl_Album a rdfs:Class .
+# :Cl_Song a rdfs:Class .
+# :Cl_Track a rdfs:Class .
+# :Cl_Critic a rdfs:Class .
+# :Cl_Performance a rdfs:Class .
+# :Cl_City a rdfs:Class .
+# :Cl_Region a rdfs:Class .
+# :Cl_Country a rdfs:Class .
+
+# :Cl_BandMember a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Person .
+# :Cl_BandLineUp a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Band .
+# :Cl_InstrumentPlayer a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Person .
+# :Cl_AlbumRecording a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Album .
+# :Cl_SongComposition a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Song .
+# :Cl_TrackRecording a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Track .
+# :Cl_CriticReview a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Critic .
+# :Cl_PerformanceEvent a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Performance .
+# :Cl_CityLocation a rdfs:Class ;
+#     rdfs:subClassOf :Cl_City .
+# :Cl_RegionLocation a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Region .
+# :Cl_CountryLocation a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Country .
+
+# :playsInstrument a rdf:Property ;
+#     rdfs:domain :Cl_InstrumentPlayer ;
+#     rdfs:range :Cl_Instrument .
+
+# :memberOfBand a rdf:Property ;
+#     rdfs:domain :Cl_BandMember ;
+#     rdfs:range :Cl_Band .
+
+# :roleInBand a rdf:Property ;
+#     rdfs:domain :Cl_BandMember ;
+#     rdfs:range xsd:string .
+
+# :recordedDuring a rdf:Property ;
+#     rdfs:domain :Cl_AlbumRecording ;
+#     rdfs:range xsd:dateTime .
+
+# :containsTracks a rdf:Property ;
+#     rdfs:domain :Cl_Album ;
+#     rdfs:range xsd:integer .
+
+# :releasedOn a rdf:Property ;
+#     rdfs:domain :Cl_Album ;
+#     rdfs:range xsd:date .
+
+# :trackOfSong a rdf:Property ;
+#     rdfs:domain :Cl_Track ;
+#     rdfs:range :Cl_Song .
+
+# :composedOn a rdf:Property ;
+#     rdfs:domain :Cl_SongComposition ;
+#     rdfs:range xsd:date .
+
+# :criticReview a rdf:Property ;
+#     rdfs:domain :Cl_CriticReview ;
+#     rdfs:range xsd:string .
+
+# :performanceDate a rdf:Property ;
+#     rdfs:domain :Cl_PerformanceEvent ;
+#     rdfs:range xsd:date .
+
+# :playedSongs a rdf:Property ;
+#     rdfs:domain :Cl_PerformanceEvent ;
+#     rdfs:range :Cl_Song .
+
+# :performanceLocation a rdf:Property ;
+#     rdfs:domain :Cl_PerformanceEvent ;
+#     rdfs:range :Cl_CityLocation .
+
+# :cityInRegion a rdf:Property ;
+#     rdfs:domain :Cl_CityLocation ;
+#     rdfs:range :Cl_RegionLocation .
+
+# :regionInCountry a rdf:Property ;
+#     rdfs:domain :Cl_RegionLocation ;
+#     rdfs:range :Cl_CountryLocation .
+
+# :Cl_Album rdfs:subClassOf [
+#     a owl:Restriction ;
+#     owl:minCardinality 1 ;
+#     owl:onProperty :containsTracks
+# ] .
+
+# :AnthonyKiedis a :Cl_Person ;
+#     :playsInstrument "Vocals" ;
+#     :memberOfBand :RedHotChiliPeppers ;
+#     :roleInBand "Vocalist" .
+
+# :Flea a :Cl_Person ;
+#     :playsInstrument "Bass", "Trumpet", "Keyboards", "Vocals" ;
+#     :memberOfBand :RedHotChiliPeppers ;
+#     :roleInBand "Bassist, Trumpeter, Keyboardist, Vocalist" .
+
+# :JohnFrusciante a :Cl_Person ;
+#     :playsInstrument "Guitar" ;
+#     :memberOfBand :RedHotChiliPeppers, :TheMarsVolta ;
+#     :roleInBand "Guitarist, Vocalist" .
+
+# :ChadSmith a :Cl_Person ;
+#     :playsInstrument "Drums" ;
+#     :memberOfBand :RedHotChiliPeppers ;
+#     :roleInBand "Drummer" .
+
+# :StadiumArcadium a :Cl_Album ;
+#     :recordedDuring "2004-09-01T00:00:00"^^xsd:dateTime ;
+#     :containsTracks 28 ;
+#     :releasedOn "2006-05-05"^^xsd:date .
+
+# :HumpDeBump a :Cl_Song ;
+#     :composedOn "2004-01-26"^^xsd:date .
+
+# :Track1 a :Cl_Track ;
+#     :trackOfSong :HumpDeBump .
+
+# :CrianHiatt a :Cl_Critic ;
+#     :criticReview "The most ambitious work in his twenty-three-year career" .
+
+# :Performance1 a :Cl_PerformanceEvent ;
+#     :performanceDate "2006-08-11"^^xsd:date ;
+#     :playedSongs :HumpDeBump ;
+#     :performanceLocation :Portland .
+
+# :Portland a :Cl_CityLocation ;
+#     :cityInRegion :Oregon .
+
+# :Oregon a :Cl_RegionLocation ;
+#     :regionInCountry :US .
+
+# :US a :Cl_CountryLocation .
+
+# :RedHotChiliPeppers a :Cl_Band ;
+#     :memberOfBand :AnthonyKiedis, :Flea, :JohnFrusciante, :ChadSmith .
+
+# :TheMarsVolta a :Cl_Band ;
+#     :memberOfBand :JohnFrusciante .
+
+# :StadiumArcadium a :Cl_Album ;
+#     :containsTracks :Track1 .
+
+# :Performance1 a :Cl_PerformanceEvent ;
+#     :playedSongs :HumpDeBump ;
+#     :performanceLocation :Portland .
+
+# :Portland a :Cl_CityLocation ;
+#     :cityInRegion :Oregon .
+
+# :Oregon a :Cl_RegionLocation ;
+#     :regionInCountry :US .
+
+# :US a :Cl_CountryLocation .
+# *******************
+# output of plan 2:
+# @prefix : <http://www.example.org/test#> .
+# @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# :Cl_Person a rdfs:Class .
+# :Cl_Band a rdfs:Class .
+# :Cl_Instrument a rdfs:Class .
+# :Cl_Role a rdfs:Class .
+# :Cl_Album a rdfs:Class .
+# :Cl_Track a rdfs:Class .
+# :Cl_Song a rdfs:Class .
+# :Cl_Critic a rdfs:Class .
+# :Cl_Review a rdfs:Class .
+# :Cl_Performance a rdfs:Class .
+# :Cl_City a rdfs:Class .
+# :Cl_Region a rdfs:Class .
+# :Cl_Country a rdfs:Class .
+
+# :playsInstrument a rdf:Property ;
+#     rdfs:domain :Cl_Person ;
+#     rdfs:range :Cl_Instrument .
+
+# :memberOfBand a rdf:Property ;
+#     rdfs:domain :Cl_Person ;
+#     rdfs:range :Cl_Band .
+
+# :hasRole a rdf:Property ;
+#     rdfs:domain :Cl_Person ;
+#     rdfs:range :Cl_Role .
+
+# :recordedAlbum a rdf:Property ;
+#     rdfs:domain :Cl_Band ;
+#     rdfs:range :Cl_Album .
+
+# :containsTrack a rdf:Property ;
+#     rdfs:domain :Cl_Album ;
+#     rdfs:range :Cl_Track .
+
+# :isRecordingOf a rdf:Property ;
+#     rdfs:domain :Cl_Track ;
+#     rdfs:range :Cl_Song .
+
+# :composedOn a rdf:Property ;
+#     rdfs:domain :Cl_Song ;
+#     rdfs:range xsd:date .
+
+# :reviewedBy a rdf:Property ;
+#     rdfs:domain :Cl_Album ;
+#     rdfs:range :Cl_Critic .
+
+# :hasReview a rdf:Property ;
+#     rdfs:domain :Cl_Critic ;
+#     rdfs:range :Cl_Review .
+
+# :performedOn a rdf:Property ;
+#     rdfs:domain :Cl_Band ;
+#     rdfs:range :Cl_Performance .
+
+# :playedSong a rdf:Property ;
+#     rdfs:domain :Cl_Performance ;
+#     rdfs:range :Cl_Song .
+
+# :tookPlaceIn a rdf:Property ;
+#     rdfs:domain :Cl_Performance ;
+#     rdfs:range :Cl_City .
+
+# :locatedInRegion a rdf:Property ;
+#     rdfs:domain :Cl_City ;
+#     rdfs:range :Cl_Region .
+
+# :locatedInCountry a rdf:Property ;
+#     rdfs:domain :Cl_Region ;
+#     rdfs:range :Cl_Country .
+
+# :AnthonyKiedis a :Cl_Person ;
+#     :playsInstrument :Vocals ;
+#     :memberOfBand :RedHotChiliPeppers ;
+#     :hasRole :Vocalist .
+
+# :Flea a :Cl_Person ;
+#     :playsInstrument :Bass, :Trumpet, :Keyboards, :Vocals ;
+#     :memberOfBand :RedHotChiliPeppers ;
+#     :hasRole :Bassist, :Trumpeter, :Keyboardist, :Vocalist .
+
+# :JohnFrusciante a :Cl_Person ;
+#     :playsInstrument :Guitar ;
+#     :memberOfBand :RedHotChiliPeppers, :TheMarsVolta ;
+#     :hasRole :Guitarist, :Vocalist .
+
+# :ChadSmith a :Cl_Person ;
+#     :playsInstrument :Drums ;
+#     :memberOfBand :RedHotChiliPeppers ;
+#     :hasRole :Drummer .
+
+# :RedHotChiliPeppers a :Cl_Band ;
+#     :recordedAlbum :StadiumArcadium .
+
+# :StadiumArcadium a :Cl_Album ;
+#     :containsTrack :HumpDeBumpTrack ;
+#     :reviewedBy :CrianHiatt .
+
+# :HumpDeBumpTrack a :Cl_Track ;
+#     :isRecordingOf :HumpDeBumpSong .
+
+# :HumpDeBumpSong a :Cl_Song ;
+#     :composedOn "2004-01-26"^^xsd:date .
+
+# :CrianHiatt a :Cl_Critic ;
+#     :hasReview "The most ambitious work in his twenty-three-year career" .
+
+# :PortlandPerformance a :Cl_Performance ;
+#     :performedOn "2006-08-11"^^xsd:date ;
+#     :playedSong :SongsFromStadiumArcadium ;
+#     :tookPlaceIn :Portland .
+
+# :Portland a :Cl_City ;
+#     :locatedInRegion :Oregon .
+
+# :Oregon a :Cl_Region ;
+#     :locatedInCountry :US .
+
+# :US a :Cl_Country .
+
+# :StadiumArcadium rdfs:subClassOf :Cl_Album ;
+#     rdfs:subPropertyOf :containsTrack ;
+#     rdfs:range xsd:integer ;
+#     rdfs:minCardinality 1 .
+
+# :StadiumArcadium a :Cl_Album ;
+#     :containsTrack :Track1, :Track2, :Track3, :Track4, :Track5, :Track6, :Track7, :Track8, :Track9, :Track10, :Track11, :Track12, :Track13, :Track14, :Track15, :Track16, :Track17, :Track18, :Track19, :Track20, :Track21, :Track22, :Track23, :Track24, :Track25, :Track26, :Track27, :Track28 .
+# *******************
+# output of plan 3:
+# @prefix : <http://www.example.org/test#> .
+# @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# :Cl_Person a rdfs:Class .
+# :Cl_Band a rdfs:Class .
+# :Cl_Instrument a rdfs:Class .
+# :Cl_Role a rdfs:Class .
+# :Cl_Album a rdfs:Class .
+# :Cl_Track a rdfs:Class .
+# :Cl_Song a rdfs:Class .
+# :Cl_Critic a rdfs:Class .
+# :Cl_Record a rdfs:Class .
+# :Cl_Performance a rdfs:Class .
+# :Cl_City a rdfs:Class .
+# :Cl_Region a rdfs:Class .
+# :Cl_Country a rdfs:Class .
+
+# :playsInstrument a rdf:Property ;
+#     rdfs:domain :Cl_Person ;
+#     rdfs:range :Cl_Instrument .
+
+# :memberOfBand a rdf:Property ;
+#     rdfs:domain :Cl_Person ;
+#     rdfs:range :Cl_Band .
+
+# :hasRole a rdf:Property ;
+#     rdfs:domain :Cl_Person ;
+#     rdfs:range :Cl_Role .
+
+# :recordedAlbum a rdf:Property ;
+#     rdfs:domain :Cl_Band ;
+#     rdfs:range :Cl_Album .
+
+# :containsTrack a rdf:Property ;
+#     rdfs:domain :Cl_Album ;
+#     rdfs:range :Cl_Track .
+
+# :isRecordingOf a rdf:Property ;
+#     rdfs:domain :Cl_Track ;
+#     rdfs:range :Cl_Song .
+
+# :composedOn a rdf:Property ;
+#     rdfs:domain :Cl_Song ;
+#     rdfs:range xsd:date .
+
+# :criticReview a rdf:Property ;
+#     rdfs:domain :Cl_Critic ;
+#     rdfs:range :Cl_Record .
+
+# :performanceDate a rdf:Property ;
+#     rdfs:domain :Cl_Performance ;
+#     rdfs:range xsd:date .
+
+# :playedSong a rdf:Property ;
+#     rdfs:domain :Cl_Performance ;
+#     rdfs:range :Cl_Song .
+
+# :performanceLocation a rdf:Property ;
+#     rdfs:domain :Cl_Performance ;
+#     rdfs:range :Cl_City .
+
+# :locatedInRegion a rdf:Property ;
+#     rdfs:domain :Cl_City ;
+#     rdfs:range :Cl_Region .
+
+# :locatedInCountry a rdf:Property ;
+#     rdfs:domain :Cl_Region ;
+#     rdfs:range :Cl_Country .
+
+# :AnthonyKiedis a :Cl_Person ;
+#     :playsInstrument :Vocals ;
+#     :memberOfBand :RedHotChiliPeppers ;
+#     :hasRole :Vocalist .
+
+# :Flea a :Cl_Person ;
+#     :playsInstrument :Bass, :Trumpet, :Keyboards, :Vocals ;
+#     :memberOfBand :RedHotChiliPeppers ;
+#     :hasRole :Bassist, :Trumpeter, :Keyboardist, :Vocalist .
+
+# :JohnFrusciante a :Cl_Person ;
+#     :playsInstrument :Guitar ;
+#     :memberOfBand :RedHotChiliPeppers, :TheMarsVolta ;
+#     :hasRole :Guitarist, :Vocalist .
+
+# :ChadSmith a :Cl_Person ;
+#     :playsInstrument :Drums ;
+#     :memberOfBand :RedHotChiliPeppers ;
+#     :hasRole :Drummer .
+
+# :StadiumArcadium a :Cl_Album ;
+#     :recordedAlbum :RedHotChiliPeppers ;
+#     :containsTrack :HumpDeBump ;
+#     :isRecordingOf :HumpDeBumpSong ;
+#     :composedOn "2004-01-26"^^xsd:date .
+
+# :CrianHiatt a :Cl_Critic ;
+#     :criticReview :StadiumArcadium .
+
+# :PortlandPerformance a :Cl_Performance ;
+#     :performanceDate "2006-08-11"^^xsd:date ;
+#     :playedSong :SongsFromStadiumArcadium ;
+#     :performanceLocation :Portland .
+
+# :Portland a :Cl_City ;
+#     :locatedInRegion :Oregon .
+
+# :Oregon a :Cl_Region ;
+#     :locatedInCountry :US .
+
+# :RedHotChiliPeppers a :Cl_Band ;
+#     :recordedAlbum :StadiumArcadium .
+
+# :StadiumArcadium a :Cl_Album ;
+#     :containsTrack :Track1, :Track2, :Track3, :Track4, :Track5, :Track6, :Track7, :Track8, :Track9, :Track10, :Track11, :Track12, :Track13, :Track14, :Track15, :Track16, :Track17, :Track18, :Track19, :Track20, :Track21, :Track22, :Track23, :Track24, :Track25, :Track26, :Track27, :Track28 ;
+#     :isRecordingOf :HumpDeBumpSong ;
+#     :composedOn "2004-01-26"^^xsd:date .
+
+# :HumpDeBumpSong a :Cl_Song ;
+#     :composedOn "2004-01-26"^^xsd:date .
+
+# :CrianHiatt a :Cl_Critic ;
+#     :criticReview "The most ambitious work in his twenty-three-year career" .
+
+# :PortlandPerformance a :Cl_Performance ;
+#     :performanceDate "2006-08-11"^^xsd:date ;
+#     :playedSong :SongsFromStadiumArcadium ;
+#     :performanceLocation :Portland .
+
+# :Portland a :Cl_City ;
+#     :locatedInRegion :Oregon .
+
+# :Oregon a :Cl_Region ;
+#     :locatedInCountry :US .
+
+# :StadiumArcadium a :Cl_Album ;
+#     rdfs:subClassOf [
+#         a owl:Restriction ;
+#         owl:minCardinality 1 ;
+#         owl:onProperty :containsTrack
+#     ] .
+
+# 
+@prefix : <http://www.example.org/test#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Cl_Person a rdfs:Class .
+:Cl_Band a rdfs:Class .
+:Cl_Instrument a rdfs:Class .
+:Cl_Role a rdfs:Class .
+:Cl_Album a rdfs:Class .
+:Cl_Track a rdfs:Class .
+:Cl_Song a rdfs:Class .
+:Cl_Critic a rdfs:Class .
+:Cl_Review a rdfs:Class .
+:Cl_Performance a rdfs:Class .
+:Cl_City a rdfs:Class .
+:Cl_Region a rdfs:Class .
+:Cl_Country a rdfs:Class .
+
+:playsInstrument a rdf:Property ;
+    rdfs:domain :Cl_Person ;
+    rdfs:range :Cl_Instrument .
+
+:memberOfBand a rdf:Property ;
+    rdfs:domain :Cl_Person ;
+    rdfs:range :Cl_Band .
+
+:hasRole a rdf:Property ;
+    rdfs:domain :Cl_Person ;
+    rdfs:range :Cl_Role .
+
+:recordedAlbum a rdf:Property ;
+    rdfs:domain :Cl_Band ;
+    rdfs:range :Cl_Album .
+
+:containsTrack a rdf:Property ;
+    rdfs:domain :Cl_Album ;
+    rdfs:range :Cl_Track .
+
+:isRecordingOf a rdf:Property ;
+    rdfs:domain :Cl_Track ;
+    rdfs:range :Cl_Song .
+
+:composedOn a rdf:Property ;
+    rdfs:domain :Cl_Song ;
+    rdfs:range xsd:date .
+
+:reviewedBy a rdf:Property ;
+    rdfs:domain :Cl_Album ;
+    rdfs:range :Cl_Critic .
+
+:hasReview a rdf:Property ;
+    rdfs:domain :Cl_Critic ;
+    rdfs:range :Cl_Review .
+
+:performedOn a rdf:Property ;
+    rdfs:domain :Cl_Band ;
+    rdfs:range :Cl_Performance .
+
+:playedSong a rdf:Property ;
+    rdfs:domain :Cl_Performance ;
+    rdfs:range :Cl_Song .
+
+:tookPlaceIn a rdf:Property ;
+    rdfs:domain :Cl_Performance ;
+    rdfs:range :Cl_City .
+
+:locatedInRegion a rdf:Property ;
+    rdfs:domain :Cl_City ;
+    rdfs:range :Cl_Region .
+
+:locatedInCountry a rdf:Property ;
+    rdfs:domain :Cl_Region ;
+    rdfs:range :Cl_Country .
+
+:AnthonyKiedis a :Cl_Person ;
+    :playsInstrument :Vocals ;
+    :memberOfBand :RedHotChiliPeppers ;
+    :hasRole :Vocalist .
+
+:Flea a :Cl_Person ;
+    :playsInstrument :Bass, :Trumpet, :Keyboards, :Vocals ;
+    :memberOfBand :RedHotChiliPeppers ;
+    :hasRole :Bassist, :Trumpeter, :Keyboardist, :Vocalist .
+
+:JohnFrusciante a :Cl_Person ;
+    :playsInstrument :Guitar ;
+    :memberOfBand :RedHotChiliPeppers, :TheMarsVolta ;
+    :hasRole :Guitarist, :Vocalist .
+
+:ChadSmith a :Cl_Person ;
+    :playsInstrument :Drums ;
+    :memberOfBand :RedHotChiliPeppers ;
+    :hasRole :Drummer .
+
+:StadiumArcadium a :Cl_Album ;
+    :recordedAlbum :RedHotChiliPeppers ;
+    :containsTrack :HumpDeBump ;
+    :isRecordingOf :HumpDeBumpSong ;
+    :composedOn "2004-01-26"^^xsd:date .
+
+:CrianHiatt a :Cl_Critic ;
+    :hasReview :StadiumArcadiumReview .
+
+:StadiumArcadiumReview a :Cl_Review ;
+    :reviewedBy :CrianHiatt ;
+    :hasReview "The most ambitious work in his twenty-three-year career" .
+
+:PortlandPerformance a :Cl_Performance ;
+    :performedOn "2006-08-11"^^xsd:date ;
+    :playedSong :SongsFromStadiumArcadium ;
+    :tookPlaceIn :Portland .
+
+:Portland a :Cl_City ;
+    :locatedInRegion :Oregon .
+
+:Oregon a :Cl_Region ;
+    :locatedInCountry :US .
+
+:RedHotChiliPeppers a :Cl_Band ;
+    :recordedAlbum :StadiumArcadium .
+
+:StadiumArcadium a :Cl_Album ;
+    :containsTrack :Track1, :Track2, :Track3, :Track4, :Track5, :Track6, :Track7, :Track8, :Track9, :Track10, :Track11, :Track12, :Track13, :Track14, :Track15, :Track16, :Track17, :Track18, :Track19, :Track20, :Track21, :Track22, :Track23, :Track24, :Track25, :Track26, :Track27, :Track28 ;
+    :isRecordingOf :HumpDeBumpSong ;
+    :composedOn "2004-01-26"^^xsd:date .
+
+:HumpDeBumpSong a :Cl_Song ;
+    :composedOn "2004-01-26"^^xsd:date .
+
+:CrianHiatt a :Cl_Critic ;
+    :hasReview "The most ambitious work in his twenty-three-year career" .
+
+:PortlandPerformance a :Cl_Performance ;
+    :performanceDate "2006-08-11"^^xsd:date ;
+    :playedSong :SongsFromStadiumArcadium ;
+    :tookPlaceIn :Portland .
+
+:Portland a :Cl_City ;
+    :locatedInRegion :Oregon .
+
+:Oregon a :Cl_Region ;
+    :locatedInCountry :US .
+
+:StadiumArcadium a :Cl_Album ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality 1 ;
+        owl:onProperty :containsTrack
+    ] .

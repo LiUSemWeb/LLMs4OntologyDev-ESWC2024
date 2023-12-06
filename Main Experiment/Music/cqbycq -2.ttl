@@ -1,0 +1,126 @@
+@prefix : <http://www.example.org/test#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Classes
+:Cl_Band rdf:type owl:Class .
+:Cl_Album rdf:type owl:Class .
+:Cl_RecordingTime rdf:type owl:Class .
+:Cl_BandAlbumRecording rdf:type owl:Class .
+:Cl_Song rdf:type owl:Class .
+:Cl_Track rdf:type owl:Class .
+:Cl_Composition rdf:type owl:Class .
+:Cl_SongComposition rdf:type owl:Class .
+:Cl_Critic rdf:type owl:Class .
+:Cl_Review rdf:type owl:Class .
+:Cl_CriticReview rdf:type owl:Class .
+:Cl_Performance rdf:type owl:Class .
+:Cl_BandPerformance rdf:type owl:Class .
+:Cl_PerformanceSong rdf:type owl:Class .
+:Cl_Location rdf:type owl:Class .
+:Cl_PerformanceLocation rdf:type owl:Class .
+:Cl_City rdf:type owl:Class .
+:Cl_Region rdf:type owl:Class .
+:Cl_CityRegion rdf:type owl:Class .
+:Cl_Country rdf:type owl:Class .
+:Cl_RegionCountry rdf:type owl:Class .
+:Cl_AlbumTrack rdf:type owl:Class .
+
+# Hierarchy
+:Cl_BandAlbumRecording rdfs:subClassOf :Cl_Band, :Cl_Album, :Cl_RecordingTime .
+:Cl_Track rdfs:subClassOf :Cl_Song .
+:Cl_SongComposition rdfs:subClassOf :Cl_Song, :Cl_Composition .
+:Cl_CriticReview rdfs:subClassOf :Cl_Critic, :Cl_Review, :Cl_Album .
+:Cl_BandPerformance rdfs:subClassOf :Cl_Band, :Cl_Performance .
+:Cl_PerformanceSong rdfs:subClassOf :Cl_Performance, :Cl_Song .
+:Cl_PerformanceLocation rdfs:subClassOf :Cl_Performance, :Cl_Location .
+:Cl_CityRegion rdfs:subClassOf :Cl_City, :Cl_Region .
+:Cl_RegionCountry rdfs:subClassOf :Cl_Region, :Cl_Country .
+:Cl_AlbumTrack rdfs:subClassOf :Cl_Album, :Cl_Track .
+
+# Object Properties
+:hasAlbum rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Band ;
+    rdfs:range :Cl_BandAlbumRecording .
+
+:isAlbumOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Album ;
+    rdfs:range :Cl_BandAlbumRecording .
+
+:hasRecordingTime rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_RecordingTime ;
+    rdfs:range :Cl_BandAlbumRecording .
+
+:isTrackOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Track ;
+    rdfs:range :Cl_Song .
+
+:hasComposition rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Song ;
+    rdfs:range :Cl_SongComposition .
+
+:hasReview rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Critic ;
+    rdfs:range :Cl_CriticReview .
+
+:isReviewOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Review ;
+    rdfs:range :Cl_CriticReview .
+
+:isReviewFor rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Album ;
+    rdfs:range :Cl_CriticReview .
+
+:hasPerformance rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Band ;
+    rdfs:range :Cl_BandPerformance .
+
+:hasSong rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Performance ;
+    rdfs:range :Cl_PerformanceSong .
+
+:hasLocation rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Performance ;
+    rdfs:range :Cl_PerformanceLocation .
+
+:isLocatedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_City ;
+    rdfs:range :Cl_CityRegion .
+
+:isRegionIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Region ;
+    rdfs:range :Cl_RegionCountry .
+
+:hasTrack rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Album ;
+    rdfs:range :Cl_AlbumTrack .
+
+:isTrackIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Track ;
+    rdfs:range :Cl_AlbumTrack .
+
+# Data Properties
+:hasName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Cl_Band, :Cl_Album, :Cl_Song, :Cl_Track, :Cl_Critic, :Cl_Location, :Cl_City, :Cl_Region, :Cl_Country ;
+    rdfs:range xsd:string .
+
+:atTime rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Cl_BandAlbumRecording, :Cl_BandPerformance ;
+    rdfs:range xsd:dateTime .
+
+:hasNumberOfTracks rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Cl_Album ;
+    rdfs:range xsd:integer .
+
+:hasReleaseDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Cl_Album ;
+    rdfs:range xsd:date .
+
+:composedOn rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Cl_SongComposition ;
+    rdfs:range xsd:date .
+
+:hasReviewText rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Cl_CriticReview ;
+    rdfs:range xsd:string .
