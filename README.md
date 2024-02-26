@@ -11,9 +11,12 @@ This repository contains documentation and implementations related to the paper 
   - [Self Consistency with Chain of Thoughts (CoT-SC)](#cot-sc)
   - [Graph of Thoughts (GoT)](#got)
 - [Models](#models)
-  - [Bard](#bard)
-  - [GPT3-5](#gpt3-5)
-  - [GPT-4](#gpt-4)
+  - Open-Source Models
+    - Llama
+  - Close-Source Models
+    - [Bard](#bard)
+    - [GPT3-5](#gpt3-5)
+    - [GPT-4](#gpt-4)
 - [Results](#Results)
   - [Bard](#bard)
   - [GPT3-5](#gpt3-5)
