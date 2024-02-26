@@ -25,7 +25,7 @@ Then you need to create properties (owl:Property). In this step, you use classes
 It is common to forget to add relations that are related to reification: In RDF reification, achieving precise modeling is pivotal, especially when handling multifaceted scenarios where mere binary associations fall short. Take for instance the statement, "a user used a resource at a time". While it might initially seem to involve a direct link between a 'user' and a 'resource', it inherently embodies three entities: a 'user', a 'resource', and a 'time'. Directly connecting 'user' to both 'resource' and 'time' fails to capture the essence of the statement, as it obscures which resource was utilized by the user at a specific time. To address this, a more sophisticated modeling approach is needed, invoking a pivot class, Cl_usingResource. This pivot class acts as an intermediary, linking both Cl_user and Cl_resource. Furthermore, it integrates a time property to denote the exact instance of usage. By employing this method, we can coherently model the statement, ensuring that the user's interaction with a specific resource at a distinct time is unambiguously represented. This approach highlights the imperative of ontology design patterns and the necessity of intermediary nodes when modeling complex relationships involving multiple entities or a mix of entities and datatypes.  
 Upon implementation of restrictions, feel free to use owl:equivalentClass [ rdf:type owl:Restriction ;  owl:onProperty :{relation} ;  owl:allValuesFrom :{Class} ] ; in this way, you can put restrictions for classes such as class Cl_C1 is the only class that uses the relation R. or you can put soft restrictions by using owl:someValuesFrom. Also, you can use general class axioms: [ rdf:type owl:Restriction ; owl:onProperty :R1 ; owl:someValuesFrom :Cl_1 ; rdfs:subClassOf :Cl_2 ] when you want to put restrictions on the definition of a class based on its relation and the definition is necessary but not enough (if it is enough it would be equivalent to owl:equivalentClass).  
 ### Story
-Ontology story comes from users input 
+Ontology story comes from users' input 
 
 ### Helper (pitfalls)
 these are the prefixes:  
@@ -54,7 +54,8 @@ common mistakes in the properties:
 
 ## Waterfall
 ### Header, Prefixes, and Definitions (common in all stages)
-**Header**: ```Your task is to contribute in creation of a well-structured ontology information that appeared in the given story, requirements, and restrictions (if there are any).```
+**Header**: 
+Your task is to contribute in creation of a well-structured ontology information that appeared in the given story, requirements, and restrictions (if there are any).
 **Prefixes** : 
 ```
 these are the prefixes:
@@ -84,4 +85,27 @@ CQ1: (competency question #1: ) object properties: rel1, rel2 ...; data properti
 <code style="color : blue">{prefixes}</code>
 
 Important: your output should be only owl turtle. Don't write any explanation before the code block or after. Also, the code must have 0 comments.
+### Story
+Ontology story comes from users' input 
 
+#### Footer (pitfalls)
+Empty at this stage
+
+
+### Stage 2:
+#### Helper
+The way to approach this is you first create classes. Classes are the keywords/classes that will be node types in the knowledge graph ontology (see the definitions bellow). Try to extract all classes. We use Turtle Syntax for representation. Important: Class names have Cl_ as a prefix for example Cl_Professors.  Also keep in mind you can add Equivalent To, General class axioms, Disjoint with, and Disjoint Union of, for each class. In this step, don't extract any properties (object property or data property.), only classes. extracting hierarchies and properties do not belong to this stage (so don't use subClassOf in this stage).
+<code style="color : blue">{definisions}</code>
+### Story
+<code style="color : blue">Previous Answer</code> + Ontology story comes from users' input (with CQs) 
+
+#### Footer (pitfalls)
+Besides here are some possible mistakes that you might do:
+1- forgetting to add prefixes at the beginning of the code.
+2- forgetting to add pivot classes (reifications).
+common mistakes in the class extraction:
+1- not extracting all classes and missing many of them. classes can be found in story, competency questions and restrictions.
+2- returning empty answer
+3- providing comments or explanations
+4- extracting classes like 'Date' is wrong since they are data properties.
+5- not adding prefixes at the start of the turtle or not using them or creating new one
