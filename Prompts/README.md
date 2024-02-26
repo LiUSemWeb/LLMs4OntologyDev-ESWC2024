@@ -139,7 +139,7 @@ The way to approach this is you first read classes in the bottom. Classes are th
 
 
 ### Story
-Ontology story comes from users' input + <span style="color:blue"> ** First LLM output (from stage 1) ** </span> +  <span style="color:blue">** RDF code from stage 2 **</span> 
+Ontology story comes from users' input + <span style="color:blue"> **First LLM output (from stage 1)** </span> +  <span style="color:blue"> **RDF code from stage 2**</span> 
 
 ### Footer (pitfalls)
 
@@ -176,7 +176,7 @@ Feel free to create more classes and pivot classes (reification) here, but not d
 <code style="color : blue">{prefixes}</code>
 
 ### Story
-Ontology story comes from users' input + <span style="color:blue"> ** First LLM output (from stage 1) ** </span> +  <span style="color:blue">** RDF code from stage 3 **</span> 
+Ontology story comes from users' input + <span style="color:blue"> **First LLM output (from stage 1)** </span> +  <span style="color:blue"> **RDF code from stage 3** </span> 
 
 ### Footer 
 Remeber, do not rewrite the rdf again, just append to the given rdf in turtle.
