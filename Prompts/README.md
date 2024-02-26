@@ -1,7 +1,8 @@
 # Prompts and Promoting Techniques
-## Zero-Shot {#zero-shot}
+## [Zero-Shot](#zero-shot)
 This method entails a one-time interaction with the LLM, requiring no iteration or feedback loop, utilizing a prompt composed of the four components outlined in the previous section: the **header**, **helper**, **story**, and **footer**. Together, the sections of the prompt provide all the information needed for the ontology construction in a single interaction.
-[Zero-Shot](#zero-shot)
+
+## Zero-Shot
 ### Header
 Your task is to contribute to the creation of well-structured ontology information that appeared in the given story, requirements, and restrictions (if there are any).
 ### Helper
