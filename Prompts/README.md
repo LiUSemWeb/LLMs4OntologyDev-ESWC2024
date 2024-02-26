@@ -12,7 +12,7 @@
 This method entails a one-time interaction with the LLM, requiring no iteration or feedback loop, utilizing a prompt composed of the four components outlined in the previous section: the **header**, **helper**, **story**, and **footer**. Together, the sections of the prompt provide all the information needed for the ontology construction in a single interaction.
 
 ## [Sub-task Decomposed Prompting - Waterfall](#Waterfall)
-The LLM prompting method involves five stages. Initially, the LLM translates core requirements into short descriptions. In the second stage, it extracts classes. In the third stage, it constructs a taxonomy. The fourth stage defines connections between established classes, and the fifth stage creates data properties. Each step includes instructions on how to establish restrictions. 
+The LLM prompting method involves **five stages**. Initially, the LLM translates core requirements into short descriptions. In the second stage, it extracts classes. In the third stage, it constructs a taxonomy. The fourth stage defines connections between established classes, and the fifth stage creates data properties. Each step includes instructions on how to establish restrictions. 
 Each stage has four components: the **header**, **helper**, **story**, and **footer**. Each is designed based on the stage.
 
 ## Zero-Shot
@@ -195,3 +195,37 @@ common mistakes in the object properties extraction, avoid these:
 
 5- not using owl:Property and instead writing owl:ObjectProperty
    
+### Stage 4:
+#### Helper
+The way to approach this is you first read classes and hierarchies in the provided rdf represented with turtle syntax with other properties like equivalentClass or disjointWith. your output must be turtle and do not rewrite everything only append: meaning the output should be concatinated with the provided rdf to become an complete error free turtle code.
+Second step, after reading the rdf, is to find data properties based on story and its competency questions. you should use this template: property_name rdf:type owl:Property. Data properties are defined between one class in the ontology and a data type, meaning that domain must be a class in ontology and range must be data types like xsd:string, xsd:integer, xsd:decimal, xsd:dateTime, xsd:date, xsd:time, xsd:boolean, xsd:byte, xsd:double, xsd:float and etc. based on the story, restrictions and competency questions try to find as much relation as possible to connect them together. For modeling data properties, if it is necessary, use these relations characteristics like: Disjoint with, Inverse Of (reverse of another relation), Equivalent to, Subproperty of, etc. Also you are flexible in domain and range so you can use Cl_class1 or Cl_class2 in domain  or disjoint with, inverse of between relations.
+Feel free to add more classes, reification classes, object properties at this stage.
+
+
+<code style="color :blue">{definisions}</code>
+
+
+<code style="color : blue">{prefixes}</code>
+
+### Story
+Ontology story comes from users' input + <span style="color:blue"> **First LLM output (from stage 1)** </span> +  <span style="color:blue"> **RDF code from stage 4** </span> 
+
+
+### Footer
+Remeber, do not rewrite the rdf again, just append to the given rdf in turtle.
+
+Besides here are some possible mistakes that you might do:
+
+common mistakes in the object properties extraction, avoid these:
+
+1- returning empty answer or very short
+
+2- providing comments or explanations
+
+3- writing prefixes again at the begining of your response
+
+4- using different prefixes
+
+5- not using owl:Property and instead writing owl:ObjectProperty
+
+
