@@ -11,10 +11,16 @@
 ## [Zero-Shot](#zero-shot)
 This method entails a one-time interaction with the LLM, requiring no iteration or feedback loop, utilizing a prompt composed of the four components outlined in the previous section: the **header**, **helper**, **story**, and **footer**. Together, the sections of the prompt provide all the information needed for the ontology construction in a single interaction.
 
+
+<img src="zero.jpg" width=75% height=75%  style="align: center;">
+
 ## [Sub-task Decomposed Prompting - Waterfall](#Waterfall)
 The LLM prompting method involves **five stages**. Initially, the LLM translates core requirements into short descriptions. In the second stage, it extracts classes. In the third stage, it constructs a taxonomy. The fourth stage defines connections between established classes, and the fifth stage creates data properties. Each step includes instructions on how to establish restrictions. 
 Each stage has four components: the **header**, **helper**, **story**, and **footer**. Each is designed based on the stage.
 By clicking on the link, you can read details of every prompt dection in more detail.
+
+
+<img src="waterfall.jpg" width=75% height=75%   style="align: center;">
 
 ## [Sub-task Decomposed Prompting - Competency Question by Competency Question (CQbyCQ)](#CQbyCQ)
 In this approach, the LLM is instructed to address **one CQ at a time**, i.e., the requirements are decomposed rather than the task itself. At each step, the LLM  formulates the ontology pertinent to that specific CQ, and the framework **immediately integrates** it with the ontologies crafted in the preceding steps. The instructive nature of the header is essential in this method; it distinctly describes the task, states which CQ is chosen, and instructs the LLM to craft classes and properties etc. for that specific requirement. Meanwhile, the **helper, story, and footer** sections of the strategy remain similar to the Zero-shot approach, providing foundational guidance, narrative context, and insights into potential errors. This can be seen as an incremental approach for building the ontology and by the modelling of the final CQ, the framework should have pieced together an integrated ontology for the entire narrative. **Merging CQ-specific** ontologies is simply done by appending the current answer to the previous OWL code in the memory. 
