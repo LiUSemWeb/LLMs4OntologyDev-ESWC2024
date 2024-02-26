@@ -101,10 +101,12 @@ Empty at this stage
 The way to approach this is you first create classes. Classes are the keywords/classes that will be node types in the knowledge graph ontology (see the definitions bellow). Try to extract all classes. We use Turtle Syntax for representation. Important: Class names have Cl_ as a prefix for example Cl_Professors.  Also keep in mind you can add Equivalent To, General class axioms, Disjoint with, and Disjoint Union of, for each class. In this step, don't extract any properties (object property or data property.), only classes. extracting hierarchies and properties do not belong to this stage (so don't use subClassOf in this stage).
 
 <code style="color :blue">{definisions}</code>
+
+
 <code style="color : blue">{prefixes}</code>
 
 ### Story
-<span style="color:blue">**Previous LLM output (from stage 1)**</span> + Ontology story comes from users' input
+Ontology story comes from users' input + <span style="color:blue">**Previous LLM output (from stage 1)**</span> 
 
 #### Footer (pitfalls)
 Besides here are some possible mistakes that you might do:
@@ -131,11 +133,13 @@ common mistakes in the class extraction:
 The way to approach this is you first read classes in the bottom. Classes are the keywords/classes that will be node types in the knowledge graph ontology (see the definitions bellow) and represented with turtle syntax with other properties like equivalentClass or disjointWith. your output must be turtle and rewrite everything: meaning the output should be an independent turtle code. When you read the classes, now try to create a category to seperate them into a hierarchy structure. Hierarchies are subClassOf in turtle. One way to approach this is categorizing classes into different classes and creating a super class and connect them toghether: e.g. if we have classes like Cl_professor, Cl_lecturer, Cl_HR, you can create a super node called Cl_universityEmployee and they all be subClassOf this node. Some super classes in the hierarchies could be: Location, Physical Object, Role, organization, group, relationship, culture, system, etc. In this step, don't extract any properties (object property or data property.) only and only create hierarchies. extracting properties are not belong to this stage. Note you do not need to create hierarchies for reification node (optional).
 
 <code style="color :blue">{definisions}</code>
+
+
 <code style="color : blue">{prefixes}</code>
 
 
 ### Story
-<span style="color:blue">**First LLM output (from stage 1)**</span> + Ontology story comes from users' input + <span style="color:blue">**RDF code from stage 2**</span> 
+Ontology story comes from users' input + <span style="color:blue">**First LLM output (from stage 1)** </span> +  <span style="color:blue">** RDF code from stage 2**</span> 
 
 #### Footer (pitfalls)
 
@@ -158,3 +162,36 @@ common mistakes in the class hierarchy extraction:
 6- forgetting Cl_ prefix
 
 7- forgetting to add prefixes or not adding (if any exist) Equivalent To, General class axioms, Disjoint with and Disjoint Union of, form the previous turtle code.
+
+### Stage 4:
+#### Helper
+The way to approach this is you first read classes and hierarchies in the provided rdf represented with turtle syntax with other properties like equivalentClass or disjointWith. Classes are the keywords/classes that are going to be nodes types in the knowledge graph ontology. your output must be turtle and do not rewrite everything only append: meaning the output should be concatinated with the provided rdf to become an complete error free turtle code. Hierarchies are subClassOf in turtle.
+Second step, after reading the rdf, is to find object properties. you should use this template: property_name rdf:type owl:Property. Object properties are defined between two classes in the ontology, meaning that domain and range must be classes not strings, integers or dates. based on the story, restrictions and competency questions try to find as much relation as possible to connect them together. in this stage do not find any data properties since they do not belong to this stage. For modeling object properties, if it is necessary, use these relations characteristics like: Functional, Inverse functional, Transitive, Symmetric, Asymmetric, Reflexive, Irreflexive, Inverse Of (reverse of another relation). Also you are flexible in domain and range so you can use Cl_class1 or Cl_class2 in domain and range or disjoint with, inverse of between relations.
+Feel free to create more classes and pivot classes (reification) here, but not data properties.
+
+
+<code style="color :blue">{definisions}</code>
+
+
+<code style="color : blue">{prefixes}</code>
+
+### Story
+Ontology story comes from users' input + <span style="color:blue">**First LLM output (from stage 1)** </span> +  <span style="color:blue">** RDF code from stage 3**</span> 
+
+### Footer 
+Remeber, do not rewrite the rdf again, just append to the given rdf in turtle.
+
+Besides here are some possible mistakes that you might do:
+
+common mistakes in the object properties extraction, avoid these:
+
+1- returning empty answer or very short
+
+2- providing comments or explanations
+
+3- writing prefixes again at the begining of your response
+
+4- using different prefixes
+
+5- not using owl:Property and instead writing owl:ObjectProperty
+   
