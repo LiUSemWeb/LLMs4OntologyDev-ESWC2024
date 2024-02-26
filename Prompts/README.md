@@ -100,9 +100,9 @@ Empty at this stage
 #### Helper
 The way to approach this is you first create classes. Classes are the keywords/classes that will be node types in the knowledge graph ontology (see the definitions bellow). Try to extract all classes. We use Turtle Syntax for representation. Important: Class names have Cl_ as a prefix for example Cl_Professors.  Also keep in mind you can add Equivalent To, General class axioms, Disjoint with, and Disjoint Union of, for each class. In this step, don't extract any properties (object property or data property.), only classes. extracting hierarchies and properties do not belong to this stage (so don't use subClassOf in this stage).
 
-<code style="color :  #3399ff">{definisions}</code>
+<code style="color :blue">{definisions}</code>
 ### Story
-<span style="color: blue;">Previous LLM output (from stage 1) </span> + Ontology story comes from users' input (with CQs) 
+<span style="color:blue">**Previous LLM output (from stage 1)**</span> + Ontology story comes from users' input (with CQs) 
 
 #### Footer (pitfalls)
 Besides here are some possible mistakes that you might do:
