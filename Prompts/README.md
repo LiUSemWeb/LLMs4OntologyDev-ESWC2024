@@ -68,7 +68,8 @@ these are the prefixes:
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 ```
-**Definitions**: 
+**Definitions**:
+
 here are some definitions of ontology components to help you understand the problem in a better way and write better hints:
 Classes are the keywords/classes that are going to be node types in the knowledge graph ontology. try to extract all classes, in addition, classes are also can be defined for reification. We use Turtle Syntax for representation. Hierarchies are rdfs:subClassOf in the turtle syntax. They can be used to classify similar classes in one superclass. To do this you can find similar nodes and create/use a class as their parent class, for example, adding the node "Cl_employee" is a good middleware and superclass for "Cl_Professors" and "Cl_Administrator" if the story is about modeling ontology of a university. Mostly the lengthier the hierarchy the better. One way can be categorizing classes into several classes and creating superclasses for them. Important: Class names have Cl_ as the prefix for example Cl_Professors. Also keep in mind you can add Equivalent To, General class axioms, Disjoint with, and Disjoint Union of, for each class.
 In your ontology modeling, for each competency question, when faced with complex scenarios that involve more than two entities or a combination of entities and datatypes, apply reification. Specifically, create a pivot class to act as an intermediary for these entities, ensuring the nuanced relationships are accurately captured. For instance, when representing "a user accessed a resource at a given time", establish a pivot class like Cl_UserResourceUsage, linked from the user, resource, and the specific time of access to Cl_UserResourceInteraction, rather than directly connecting the user to both the resource and time.
@@ -95,23 +96,29 @@ Ontology story comes from users' input
 #### Footer (pitfalls)
 Empty at this stage
 
-
 ### Stage 2:
 #### Helper
 The way to approach this is you first create classes. Classes are the keywords/classes that will be node types in the knowledge graph ontology (see the definitions bellow). Try to extract all classes. We use Turtle Syntax for representation. Important: Class names have Cl_ as a prefix for example Cl_Professors.  Also keep in mind you can add Equivalent To, General class axioms, Disjoint with, and Disjoint Union of, for each class. In this step, don't extract any properties (object property or data property.), only classes. extracting hierarchies and properties do not belong to this stage (so don't use subClassOf in this stage).
 
-<code style="color : blue">{definisions}</code>
+<code style="color :  #3399ff">{definisions}</code>
 ### Story
-<code style="color : blue">Previous Answer</code> + Ontology story comes from users' input (with CQs) 
+<code style="color:  #3399ff">Previous LLM output (from stage 1) </code> + Ontology story comes from users' input (with CQs) 
 
 #### Footer (pitfalls)
 Besides here are some possible mistakes that you might do:
+
 1- forgetting to add prefixes at the beginning of the code.
 
 2- forgetting to add pivot classes (reifications).
+
 common mistakes in the class extraction:
+
 1- not extracting all classes and missing many of them. classes can be found in story, competency questions and restrictions.
+
 2- returning empty answer
+
 3- providing comments or explanations
+
 4- extracting classes like 'Date' is wrong since they are data properties.
+
 5- not adding prefixes at the start of the turtle or not using them or creating new one
