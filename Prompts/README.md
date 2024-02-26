@@ -141,12 +141,12 @@ The way to approach this is you first read classes in the bottom. Classes are th
 ### Story
 Ontology story comes from users' input + <span style="color:blue">**First LLM output (from stage 1)** </span> +  <span style="color:blue">** RDF code from stage 2**</span> 
 
-#### Footer (pitfalls)
+### Footer (pitfalls)
 
 Besides here are some possible mistakes that you might do:
 
-- forgetting to add prefixes at the beginning of the code.
-- 
+ forgetting to add prefixes at the beginning of the code.
+ 
 common mistakes in the class hierarchy extraction:
 
 1- creating ontology for non-existing classes.
