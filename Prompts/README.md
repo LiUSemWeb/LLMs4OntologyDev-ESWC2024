@@ -30,6 +30,9 @@ In this approach, the LLM is instructed to address **one CQ at a time**, i.e., t
 ## [Chain of Thoughts (CoT)](#CoT)
 The concept of 'thoughts' is a series of steps that the LLM carefully crafts for itself, which should in the end result in an ontology. This iterative and cumulative process is a semi-automatic prompting method since the LLM generates part of the prompt itself. 
 The CoT framework instructs the LLM to create a plan based on the narrative and its associated CQs. This method then involves tackling each step of the plan independently. The prompt guides the execution of only the next step at a time, requiring OWL code (Turtle syntax) exclusive to that step. The outcome of each step is stored in memory and added sequentially to the prompt. By following this approach, the ontology is developed progressively by following the generated plan, building upon the previous step. 
+
+<img src="cot.jpg" width=75% height=75%  style="align: center;">
+
 ## Zero-Shot
 ### Header
 Your task is to contribute to the creation of well-structured ontology information that appeared in the given story, requirements, and restrictions (if there are any).
