@@ -3,16 +3,21 @@
 This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various methods and models for ontology development, focusing on creating a tool that helps ontologists by providing modeling suggestions.
 
 ## Table of Contents
-
 - [Prompts](#prompts)
-  - [Zero Shot](#zero-shot)
+  - [Zero Shot Prompting](#zero-shot)
+  - [Sub-task Decomposed Prompting: Waterfall approach](#link)
+  - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)] (#cqbycq)
   - [Chain of Thoughts](#chain-of-thoughts)
-  - [Tree of Thoughts](#tree-of-thoughts)
+  - [Self Consistency with Chain of Thoughts (CoT-SC)](#cot-sc)
+  - [Graph of Thoughts (GoT)](#got)
 - [Models](#models)
   - [Bard](#bard)
   - [GPT3-5](#gpt3-5)
   - [GPT-4](#gpt-4)
-
+- [Results](#Results)
+  - [Bard](#bard)
+  - [GPT3-5](#gpt3-5)
+  - [GPT-4](#gpt-4)
 ## Prompts
 
 ### Zero Shot
@@ -23,7 +28,7 @@ The zero-shot approach in ontology development involves...
 
 The chain of thoughts method is used to...
 
-### Tree of Thoughts
+### got
 
 The tree of thoughts technique allows...
 
