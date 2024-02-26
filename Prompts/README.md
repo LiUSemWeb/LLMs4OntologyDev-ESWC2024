@@ -102,7 +102,7 @@ The way to approach this is you first create classes. Classes are the keywords/c
 
 <code style="color :  #3399ff">{definisions}</code>
 ### Story
-<code style="color:  #3399ff">Previous LLM output (from stage 1) </code> + Ontology story comes from users' input (with CQs) 
+<span style="color: blue;">Previous LLM output (from stage 1) </span> + Ontology story comes from users' input (with CQs) 
 
 #### Footer (pitfalls)
 Besides here are some possible mistakes that you might do:
