@@ -101,8 +101,10 @@ Empty at this stage
 The way to approach this is you first create classes. Classes are the keywords/classes that will be node types in the knowledge graph ontology (see the definitions bellow). Try to extract all classes. We use Turtle Syntax for representation. Important: Class names have Cl_ as a prefix for example Cl_Professors.  Also keep in mind you can add Equivalent To, General class axioms, Disjoint with, and Disjoint Union of, for each class. In this step, don't extract any properties (object property or data property.), only classes. extracting hierarchies and properties do not belong to this stage (so don't use subClassOf in this stage).
 
 <code style="color :blue">{definisions}</code>
+<code style="color : blue">{prefixes}</code>
+
 ### Story
-<span style="color:blue">**Previous LLM output (from stage 1)**</span> + Ontology story comes from users' input (with CQs) 
+<span style="color:blue">**Previous LLM output (from stage 1)**</span> + Ontology story comes from users' input
 
 #### Footer (pitfalls)
 Besides here are some possible mistakes that you might do:
@@ -122,3 +124,37 @@ common mistakes in the class extraction:
 4- extracting classes like 'Date' is wrong since they are data properties.
 
 5- not adding prefixes at the start of the turtle or not using them or creating new one
+
+
+### Stage 3:
+#### Helper
+The way to approach this is you first read classes in the bottom. Classes are the keywords/classes that will be node types in the knowledge graph ontology (see the definitions bellow) and represented with turtle syntax with other properties like equivalentClass or disjointWith. your output must be turtle and rewrite everything: meaning the output should be an independent turtle code. When you read the classes, now try to create a category to seperate them into a hierarchy structure. Hierarchies are subClassOf in turtle. One way to approach this is categorizing classes into different classes and creating a super class and connect them toghether: e.g. if we have classes like Cl_professor, Cl_lecturer, Cl_HR, you can create a super node called Cl_universityEmployee and they all be subClassOf this node. Some super classes in the hierarchies could be: Location, Physical Object, Role, organization, group, relationship, culture, system, etc. In this step, don't extract any properties (object property or data property.) only and only create hierarchies. extracting properties are not belong to this stage. Note you do not need to create hierarchies for reification node (optional).
+
+<code style="color :blue">{definisions}</code>
+<code style="color : blue">{prefixes}</code>
+
+
+### Story
+<span style="color:blue">**First LLM output (from stage 1)**</span> + Ontology story comes from users' input + <span style="color:blue">**RDF code from stage 2**</span> 
+
+#### Footer (pitfalls)
+
+Besides here are some possible mistakes that you might do:
+
+- forgetting to add prefixes at the beginning of the code.
+- 
+common mistakes in the class hierarchy extraction:
+
+1- creating ontology for non-existing classes.
+  
+2- returning empty answer or very short
+
+3- providing comments or explanations
+
+4- extracting attributes such as date, time, string names that are related to data properties
+
+5- syntax error in turtle
+
+6- forgetting Cl_ prefix
+
+7- forgetting to add prefixes or not adding (if any exist) Equivalent To, General class axioms, Disjoint with and Disjoint Union of, form the previous turtle code.
