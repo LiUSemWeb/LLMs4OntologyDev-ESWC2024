@@ -2,12 +2,12 @@
 
 ## Table of Contents
 - [Prompts](#prompts)
-  - [Zero Shot Prompting](#zero-shot)
-  - [Sub-task Decomposed Prompting: Waterfall approach](#link)
-  - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)] (#cqbycq)
-  - [Chain of Thoughts](#chain-of-thoughts)
-  - [Self Consistency with Chain of Thoughts (CoT-SC)](#cot-sc)
-  - [Graph of Thoughts (GoT)](#got)
+  - Zero-Shot Prompting
+  - Sub-task Decomposed Prompting: Waterfall approach
+  - Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)
+  - Chain of Thoughts
+  - Self Consistency with Chain of Thoughts (CoT-SC)
+  - Graph of Thoughts (GoT)
 ## [Zero-Shot](#zero-shot)
 This method entails a one-time interaction with the LLM, requiring no iteration or feedback loop, utilizing a prompt composed of the four components outlined in the previous section: the **header**, **helper**, **story**, and **footer**. Together, the sections of the prompt provide all the information needed for the ontology construction in a single interaction.
 
