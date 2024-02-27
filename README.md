@@ -4,7 +4,7 @@ This repository contains documentation and implementations related to the paper 
 
 ## Table of Contents
 - [Prompts](#prompts)
-  - [Zero Shot Prompting](#zero-shot)
+  - [Zero Shot Prompting](Prompts/zero-shot)
   - [Sub-task Decomposed Prompting: Waterfall approach](#link)
   - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)] (#cqbycq)
   - [Chain of Thoughts](#chain-of-thoughts)
