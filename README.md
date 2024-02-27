@@ -31,14 +31,14 @@ This repository contains documentation and implementations related to the paper 
   - [GPT-4 VS Student in groups]()
   - [GPT-4 VS Students in groups: Ignoring minor errors]() <hr>
 
-### [Stories]()
+### [Stories](https://github.com/saeedizade/LLMsOntology/blob/main/Stories/README.MD#here-are-ontology-stories-in-the-experiments)
 #### Short Narratives (Initial Experiment)
-  - [Short Story 1: Vegetarians]() 
-  - [Short Story 2: Lena]() 
-  - [Short Story 3: Big Festival]() 
+  - Short Story 1: Vegetarians 
+  - Short Story 2: Lena
+  - Short Story 3: Big Festival 
 #### Ontology Narratives (Main experiment)
-  - [Story 1: Theatre Festival]() 
-  - [Story 2: Music Production]() 
-  - [Story 3: Hospital Story]() 
+  - Story 1: Theatre Festival
+  - Story 2: Music Production 
+  - Story 3: Hospital Story
 
 
