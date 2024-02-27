@@ -5,11 +5,11 @@ This repository contains documentation and implementations related to the paper 
 ## Table of Contents
 - [Prompts](#prompts)
   - [Zero Shot Prompting](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#zero-shot)
-  - [Sub-task Decomposed Prompting: Waterfall approach](#link)
-  - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)] (#cqbycq)
-  - [Chain of Thoughts](#chain-of-thoughts)
-  - [Self Consistency with Chain of Thoughts (CoT-SC)](#cot-sc)
-  - [Graph of Thoughts (GoT)](#got)
+  - [Sub-task Decomposed Prompting: Waterfall approach](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#sub-task-decomposed-prompting---waterfall)
+  - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)] (https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#sub-task-decomposed-prompting---competency-question-by-competency-question-cqbycq)
+  - [Chain of Thoughts](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#chain-of-thoughts-cot)
+  - [Self Consistency with Chain of Thoughts (CoT-SC)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#self-consistency-with-chain-of-thoughts-cot-sc)
+  - [Graph of Thoughts (GoT)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#graph-of-thoughts-got)
 - [Models](#models)
   - Open-Source Models
     - Llama
