@@ -8,11 +8,12 @@ In our experiment, we have two sets of experiments, the Initial experiment and t
 The goal is simple, we want an ontology that can answer/model all CQs. Answering/modeling a CQ is done when a SPARQL query can be written to extract the answer to the CQ.
 Competency questions in all of these three stories (for the main experiment) are similar. As described in the paper, we have four types of CQs: 
 - 1- **Simple data property**: to model this CQ, we need a data property and sometimes a class
-- 2- Simple object property: to model this CQ, we need an object property between two classes, sometimes one or two classes must be created.
-- 3- Reification: Complex scenario, a reification class (or relation class) which is a node type must be added and all properties must be added to the reification class.
-- 4- Restrictions: establishing subClassOf or any other axioms that restrict relations between classes.
+- 2- **Simple object property**: to model this CQ, we need an object property between two classes, sometimes one or two classes must be created.
+- 3- **Reification**: Complex scenario, a reification class (or relation class) which is a node type must be added and all properties must be added to the reification class.
+- 4- **Restrictions**: establishing subClassOf or any other axioms that restrict relations between classes.
 
 Here you can find which CQs from the ontology stories are in which one of these categories:
+
 1-	Data properties: M10, H12, T1, M2, H6, T7, M4, H2, T9, M6, H11, T11, M8, H3, T13
 
 2-	Object property: M12, H14, T2, M13, H4, T4, M14, H5, T5, M7, H9, T6, M1, H1, T8, M5, H10, T10
