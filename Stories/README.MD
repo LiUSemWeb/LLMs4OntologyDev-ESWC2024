@@ -7,10 +7,10 @@ In our experiment, we have two sets of experiments, the Initial experiment and t
 ### Goals in ontology stories (the main experiment)
 The goal is simple, we want an ontology that can answer/model all CQs. Answering/modeling a CQ is done when a SPARQL query can be written to extract the answer to the CQ.
 Competency questions in all of these three stories (for the main experiment) are similar. As described in the paper, we have four types of CQs: 
-- 1- Simple data property 
-- 2- Simple object property 
-- 3- Reification 
-- 4- Restrictions
+- 1- Simple data property: to model this CQ, we need a data property and sometimes a class
+- 2- Simple object property: to model this CQ, we need an object property between two classes, sometimes one or two classes must be created.
+- 3- Reification: Complex scenario, a reification class (or relation class) which is a node type must be added and all properties must be added to the reification class.
+- 4- Restrictions: establishing subClassOf or any other axioms that restrict relations between classes.
 
 The stories are as follows:
 
