@@ -54,6 +54,10 @@ Consequently, this approach allows for the exploration of a broader range of pot
 We adapted our version of GoT from the CoT-SC framework, which has been tailored to suit our specific needs. This modification was essential due to the original GoT's intensive interaction requirements between the framework and the LLM, which were not practical for our purposes.
 In our adapted GoT approach, **similar to CoT-SC**, the LLM still generates **three distinct plans**, and OWL files, each representing a unique ontology. However, unlike CoT-SC, where the focus is on selecting the best plan for the story, our version of GoT directs the LLM to **integrate the ideas and solutions** from all three OWL files into a single, unified ontology.
 
+
+<img src="got.jpg" width=75% height=75%  style="align: center;">
+
+
 ## ZeroShot
 ### Header
 Your task is to contribute to the creation of well-structured ontology information that appeared in the given story, requirements, and restrictions (if there are any).
