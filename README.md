@@ -6,17 +6,23 @@ This repository contains documentation and implementations related to the paper 
 - [Prompts](#prompts)
   - [Zero Shot Prompting](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#zero-shot)
   - [Sub-task Decomposed Prompting: Waterfall approach](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#sub-task-decomposed-prompting---waterfall)
-  - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)] (https://github.com/saeedizade/LLMsOntology/blob/main/Prompts/README.md#sub-task-decomposed-prompting---competency-question-by-competency-question)
+  - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)](https://github.com/saeedizade/LLMsOntology/blob/main/Prompts/README.md#sub-task-decomposed-prompting---competency-question-by-competency-question)
   - [Chain of Thoughts](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#chain-of-thoughts-cot)
   - [Self Consistency with Chain of Thoughts (CoT-SC)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#self-consistency-with-chain-of-thoughts-cot-sc)
   - [Graph of Thoughts (GoT)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#graph-of-thoughts-got)
-- [Models](#models)
+- [Models](https://github.com/saeedizade/LLMsOntology/tree/main/Models#large-language-models)
   - Open-Source Models
-    - Llama
+    - Lama-7B
+    - Lama-13B
+    -Llama2-70B
+    -Alpaca
+    -Falcon-7B-Instruct
+    -WizardLM 
+    -Alpaca-LoRA
   - Close-Source Models
-    - [Bard](#bard)
-    - [GPT3-5](#gpt3-5)
-    - [GPT-4](#gpt-4)
+    - Bard
+    - GPT3-5
+    - GPT-4
 - [Results](#Results)
   - [Bard](#bard)
   - [GPT3-5](#gpt3-5)
