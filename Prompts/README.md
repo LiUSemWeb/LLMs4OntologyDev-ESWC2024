@@ -8,7 +8,7 @@
   - Chain of Thoughts
   - Self Consistency with Chain of Thoughts (CoT-SC)
   - Graph of Thoughts (GoT)
-## [Zero-Shot](#zero-shot)
+## [Zero-Shot](#ZeroShot)
 This method entails a one-time interaction with the LLM, requiring no iteration or feedback loop, utilizing a prompt composed of the four components outlined in the previous section: the **header**, **helper**, **story**, and **footer**. Together, the sections of the prompt provide all the information needed for the ontology construction in a single interaction.
 
 
@@ -33,7 +33,17 @@ The CoT framework instructs the LLM to create a plan based on the narrative and 
 
 <img src="cot.jpg" width=75% height=75%  style="align: center;">
 
-## Zero-Shot
+## [Self Consistency with Chain of Thoughts (CoT-SC)](#CoT-SC)
+The CoT-SC prompting technique, while bearing a resemblance to the CoT approach in its stepwise progression towards an end goal, is distinguished through the implementation of three distinct plans. Unlike CoT, which follows a singular trajectory, CoT-SC branches out into three separate pathways, each culminating in its own unique ontology. In this method, the critical task of the LLM is to evaluate and determine which path is better at modelling the story.  
+To ensure the generation of three diverse plans, the temperature and penalty parameters (they control the randomness and self-repetition of LLMs respectively) of the LLM are set from 0 to 0.5, only for this stage. This setting is crucial as it promotes variability and creativity in the LLM's responses (avoiding three identical plans). Finally after producing the output of three plans, LLM is instructed to pick the best plan.
+Consequently, this approach allows for the exploration of a broader range of potential ontologies, each offering a different perspective and solution to the narrative and its corresponding questions. 
+
+<img src="sc.jpg" width=75% height=75%  style="align: center;">
+
+
+
+
+## ZeroShot
 ### Header
 Your task is to contribute to the creation of well-structured ontology information that appeared in the given story, requirements, and restrictions (if there are any).
 ### Helper
