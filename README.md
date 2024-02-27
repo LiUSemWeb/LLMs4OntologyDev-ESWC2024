@@ -3,13 +3,15 @@
 This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various methods and models for ontology development, focusing on creating a tool that helps ontologists by providing modeling suggestions.
 
 ## Table of Contents
-- [Prompts](#prompts)
+### Prompts
   - [Zero Shot Prompting](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#zero-shot)
   - [Sub-task Decomposed Prompting: Waterfall approach](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#sub-task-decomposed-prompting---waterfall)
   - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)](https://github.com/saeedizade/LLMsOntology/blob/main/Prompts/README.md#sub-task-decomposed-prompting---competency-question-by-competency-question)
   - [Chain of Thoughts](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#chain-of-thoughts-cot)
   - [Self Consistency with Chain of Thoughts (CoT-SC)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#self-consistency-with-chain-of-thoughts-cot-sc)
   - [Graph of Thoughts (GoT)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#graph-of-thoughts-got)
+<hr>
+### Models
 - [Models](https://github.com/saeedizade/LLMsOntology/tree/main/Models#large-language-models)
   - Open-Source Models
     - Lama-7B
