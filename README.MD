@@ -11,6 +11,8 @@ This repository contains documentation and implementations related to the paper 
   - [Self Consistency with Chain of Thoughts (CoT-SC)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#self-consistency-with-chain-of-thoughts-cot-sc)
   - [Graph of Thoughts (GoT)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#graph-of-thoughts-got) <hr>
 ### [Models](https://github.com/saeedizade/LLMsOntology/tree/main/Models#large-language-models)
+Here are the list of models that used in the experiments. [Click here to see more deitals](https://github.com/saeedizade/LLMsOntology/blob/main/Models#large-language-models)
+
   - Open-Source Models
     - Lama-7B
     - Lama-13B
@@ -32,6 +34,7 @@ This repository contains documentation and implementations related to the paper 
   - [GPT-4 VS Students in groups: Ignoring minor errors]() <hr>
 
 ### [Stories](https://github.com/saeedizade/LLMsOntology/blob/main/Stories/README.MD#here-are-ontology-stories-in-the-experiments)
+Here are the list of stories that used in the experiments. [Click here to see stories and their CQs](https://github.com/saeedizade/LLMsOntology/blob/main/Stories/README.MD#here-are-ontology-stories-in-the-experiments)
 #### Short Narratives (Initial Experiment)
   - Short Story 1: Vegetarians 
   - Short Story 2: Lena
