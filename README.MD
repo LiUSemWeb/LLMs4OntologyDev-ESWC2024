@@ -27,11 +27,11 @@ Here are the list of models that used in the experiments. [Click here to see mor
     - GPT-4 <hr>
 ### [Results]()
   #### Initial Experiment 
-  - [Initial Experiment: First Phase - Simple binary criteria to exclude models](#bard)
-  - [Initial Experiment: Second Phase - Excluding more models and Prompting techniques](#gpt3-5)
+  - [Initial Experiment: First Phase - Simple binary criteria to exclude models](https://github.com/saeedizade/LLMsOntology/blob/main/ExperimentResult/Readme.md)
+  - [Initial Experiment: Second Phase - Excluding more models and Prompting techniques](https://github.com/saeedizade/LLMsOntology/blob/main/ExperimentResult/Readme.md)
   #### Main Experiment
-  - [GPT-4 VS Student in groups]()
-  - [GPT-4 VS Students in groups: Ignoring minor errors]() <hr>
+  - [GPT-4 VS Student in groups](https://github.com/saeedizade/LLMsOntology/blob/main/ExperimentResult/Readme.md)
+  - [GPT-4 VS Students in groups: Ignoring minor errors](https://github.com/saeedizade/LLMsOntology/blob/main/ExperimentResult/Readme.md) <hr>
 
 ### [Stories](https://github.com/saeedizade/LLMsOntology/blob/main/Stories/README.MD#here-are-ontology-stories-in-the-experiments)
 Here are the list of stories that used in the experiments. [Click here to see stories and their CQs](https://github.com/saeedizade/LLMsOntology/blob/main/Stories/README.MD#here-are-ontology-stories-in-the-experiments)
