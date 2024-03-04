@@ -12,23 +12,25 @@ On the other hand, GPT-3.5 and GPT-4 emerged as the only models capable of succe
 
 In summary, the results from phase one of the preliminary experiment underscore the significant variation in performance across different LLMs and prompting techniques. Only GPT-3.5 and GPT-4 provided sufficiently high-quality results to proceed to the next phase. The findings also emphasize the need for careful consideration and refinement of prompting techniques to ensure compatibility and effectiveness with the chosen LLMs.
 
-| Model  | Method              | Vegetarian rabbit | Lenais a car | Large Festival |
-|:-------:|:-----------------:|:-----------------:|:------------:|:--------------:|
-| GPT4   | AllOnce             | <span style="color:green">Passed</span> | <span style="color:red">Failed</span> | <span style="color:green">Passed</span> |
-| GPT4   | Waterfall           | <span style="color:red">Failed</span> | <span style="color:red">Failed</span> | <span style="color:green">Passed</span> |
-| GPT4   | CQ by CQ            | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> |
-| GPT4   | Chain of thoughts   | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> |
-| GPT4   | Tree of thoughts    | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> |
-| GPT4   | Graph of thoughts   | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> |
-| GPT3.5 | AllOnce             | <span style="color:red">Failed</span> | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> |
-| GPT3.5 | Waterfall           | <span style="color:red">Failed</span> | <span style="color:red">Failed</span> | <span style="color:green">Passed</span> |
-| GPT3.5 | CQ by CQ            | <span style="color:red">Failed</span> | <span style="color:red">Failed</span> | <span style="color:red">Failed</span> |
-| GPT3.5 | Chain of thoughts   | <span style="color:red">Failed</span> | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> |
-| GPT3.5 | Tree of thoughts    | <span style="color:red">Failed</span> | <span style="color:green">Passed</span> | <span style="color:red">Failed</span> |
-| GPT3.5 | Graph of thoughts   | <span style="color:red">Failed</span> | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> |
-| Bard   |  all prompts        | <span style="color:red">Failed</span> | <span style="color:red">Failed</span> | <span style="color:red">Failed</span> |  
-| Llama-70B | all prompts      | <span style="color:green">bard</span> | <span style="color:green">bard</span> | <span style="color:green">bard</span> |
+This table shows information about LLMs' performance on small stories. Models are combined with prompting techniques and tested to see can they pass or fail on the stories.
 
+| Model  | Prompting Techniques              | Vegetarian story | Lena story | Large Festival |
+|-------|-----------------|:-----------------:|:------------:|:--------------:|
+| GPT4   | Zero-Shot           | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| GPT4   | Waterfall           | :x: | :x: | :heavy_check_mark: |
+| GPT4   | CQ by CQ            | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| GPT4   | Chain of thoughts   | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| GPT4   | Tree of thoughts    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| GPT4   | Graph of thoughts   | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| GPT3.5 | Zero-Shot           | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| GPT3.5 | Waterfall           | :x: | :x: | :heavy_check_mark: |
+| GPT3.5 | CQ by CQ            | :x: | :x: | :x: |
+| GPT3.5 | Chain of thoughts   | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| GPT3.5 | Tree of thoughts    | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| GPT3.5 | Graph of thoughts   | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| Bard   |  all prompts        | :x: | :x: | :x: |  
+| Llama-70B | all prompts      | :x: | :x: | :x: |  
 
+According to the results we got from this table, we decided to proceed the rest of the experiment with GPT-3.5 and GPT-4. The reason is no other model could produce a code that could model the stories.
  
 ## 3- Main Experiment
