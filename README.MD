@@ -2,7 +2,7 @@
 
 This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various methods and models for ontology development, focusing on creating a tool that helps ontologists by providing modeling suggestions.
 
-## Table of Contents
+## Contents
 ### Prompts
   - [Zero Shot Prompting](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#zero-shot)
   - [Sub-task Decomposed Prompting: Waterfall approach](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#sub-task-decomposed-prompting---waterfall)
