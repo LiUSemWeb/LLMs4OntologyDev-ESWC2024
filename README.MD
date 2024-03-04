@@ -1,6 +1,6 @@
 # Navigating Ontology Development with Large Language Models
 
-This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various methods and models for ontology development, focusing on creating a tool that helps ontologists by providing modeling suggestions.
+This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various [prompting techniques](Prompts) and [models](Stories/README.MD) for ontology development, focusing on creating a tool that helps ontologists by providing modeling suggestions.
 
 ## Contents
 ### Prompts
@@ -11,7 +11,7 @@ This repository contains documentation and implementations related to the paper 
   - [Self Consistency with Chain of Thoughts (CoT-SC)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#self-consistency-with-chain-of-thoughts-cot-sc)
   - [Graph of Thoughts (GoT)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#graph-of-thoughts-got) <hr>
 ### [Models](https://github.com/saeedizade/LLMsOntology/tree/main/Models#large-language-models)
-Here are the list of models that used in the experiments. [Click here to see more deitals](/Models#large-language-models)
+Here are the list of models that used in the experiments. [Click here to see more details](/Models#large-language-models)
 
   - Open-Source Models
     - Lama-7B
@@ -30,7 +30,7 @@ Here are the list of models that used in the experiments. [Click here to see mor
   - [Initial Experiment: First Phase - Simple binary criteria to exclude models](ExperimentResult/Readme.md)
   - [Initial Experiment: Second Phase - Excluding more models and Prompting techniques](ExperimentResult/Readme.md)
   #### Main Experiment
-  - [GPT-4 VS Student in groups](https://github.com/saeedizade/LLMsOntology/blob/main/ExperimentResult/Readme.md)
+  - [GPT-4 VS Student in groups](ExperimentResult/Readme.md)
   - [GPT-4 VS Students in groups: Ignoring minor errors](ExperimentResult/Readme.md) <hr>
 
 ### [Stories](Stories/README.MD#here-are-ontology-stories-in-the-experiments)
