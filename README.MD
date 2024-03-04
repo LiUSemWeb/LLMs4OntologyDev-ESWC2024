@@ -1,7 +1,7 @@
 # Navigating Ontology Development with Large Language Models
 
-This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various [prompting techniques](Prompts) and [models](Stories/README.MD) for ontology development, focusing on creating a tool that helps ontologists by providing modeling suggestions.
-
+This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various [prompting techniques](Prompts) and [models](Models/README.MD) for ontology development, focusing on creating a tool that helps ontologists by providing modeling suggestions.
+We compared students' submissions of the ontology stories with LLMs to have a comparison baseline [click here to see the results](ExperimentResult/Readme.md). There were 10 groups of students (~2 students per group) and three submissions per story to pass the task (stories were in a master course)
 ## Contents
 ### Prompts
   - [Zero Shot Prompting](Prompts#zero-shot)
@@ -10,7 +10,7 @@ This repository contains documentation and implementations related to the paper 
   - [Chain of Thoughts](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#chain-of-thoughts-cot)
   - [Self Consistency with Chain of Thoughts (CoT-SC)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#self-consistency-with-chain-of-thoughts-cot-sc)
   - [Graph of Thoughts (GoT)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#graph-of-thoughts-got) <hr>
-### [Models](https://github.com/saeedizade/LLMsOntology/tree/main/Models#large-language-models)
+### [Models](Models#large-language-models)
 Here are the list of models that used in the experiments. [Click here to see more details](/Models#large-language-models)
 
   - Open-Source Models
