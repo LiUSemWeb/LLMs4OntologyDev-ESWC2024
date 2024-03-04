@@ -13,7 +13,7 @@ On the other hand, GPT-3.5 and GPT-4 emerged as the only models capable of succe
 In summary, the results from phase one of the preliminary experiment underscore the significant variation in performance across different LLMs and prompting techniques. Only GPT-3.5 and GPT-4 provided sufficiently high-quality results to proceed to the next phase. The findings also emphasize the need for careful consideration and refinement of prompting techniques to ensure compatibility and effectiveness with the chosen LLMs.
 
 | Model  | Method              | Vegetarian rabbit | Lenais a car | Large Festival |
-|--------|---------------------|-------------------|--------------|----------------|
+|:-------:|:-----------------:|:-----------------:|:------------:|:--------------:|
 | GPT4   | AllOnce             | <span style="color:green">Passed</span> | <span style="color:red">Failed</span> | <span style="color:green">Passed</span> |
 | GPT4   | Waterfall           | <span style="color:red">Failed</span> | <span style="color:red">Failed</span> | <span style="color:green">Passed</span> |
 | GPT4   | CQ by CQ            | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> | <span style="color:green">Passed</span> |
