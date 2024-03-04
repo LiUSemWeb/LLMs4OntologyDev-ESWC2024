@@ -4,14 +4,14 @@ This repository contains documentation and implementations related to the paper 
 
 ## Contents
 ### Prompts
-  - [Zero Shot Prompting](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#zero-shot)
-  - [Sub-task Decomposed Prompting: Waterfall approach](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#sub-task-decomposed-prompting---waterfall)
-  - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)](https://github.com/saeedizade/LLMsOntology/blob/main/Prompts/README.md#sub-task-decomposed-prompting---competency-question-by-competency-question)
+  - [Zero Shot Prompting](Prompts#zero-shot)
+  - [Sub-task Decomposed Prompting: Waterfall approach](Prompts#sub-task-decomposed-prompting---waterfall)
+  - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)](Prompts/README.md#sub-task-decomposed-prompting---competency-question-by-competency-question)
   - [Chain of Thoughts](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#chain-of-thoughts-cot)
   - [Self Consistency with Chain of Thoughts (CoT-SC)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#self-consistency-with-chain-of-thoughts-cot-sc)
   - [Graph of Thoughts (GoT)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#graph-of-thoughts-got) <hr>
 ### [Models](https://github.com/saeedizade/LLMsOntology/tree/main/Models#large-language-models)
-Here are the list of models that used in the experiments. [Click here to see more deitals](https://github.com/saeedizade/LLMsOntology/blob/main/Models#large-language-models)
+Here are the list of models that used in the experiments. [Click here to see more deitals](/Models#large-language-models)
 
   - Open-Source Models
     - Lama-7B
@@ -27,13 +27,13 @@ Here are the list of models that used in the experiments. [Click here to see mor
     - GPT-4 <hr>
 ### [Results]()
   #### Initial Experiment 
-  - [Initial Experiment: First Phase - Simple binary criteria to exclude models](https://github.com/saeedizade/LLMsOntology/blob/main/ExperimentResult/Readme.md)
-  - [Initial Experiment: Second Phase - Excluding more models and Prompting techniques](https://github.com/saeedizade/LLMsOntology/blob/main/ExperimentResult/Readme.md)
+  - [Initial Experiment: First Phase - Simple binary criteria to exclude models](ExperimentResult/Readme.md)
+  - [Initial Experiment: Second Phase - Excluding more models and Prompting techniques](ExperimentResult/Readme.md)
   #### Main Experiment
   - [GPT-4 VS Student in groups](https://github.com/saeedizade/LLMsOntology/blob/main/ExperimentResult/Readme.md)
-  - [GPT-4 VS Students in groups: Ignoring minor errors](https://github.com/saeedizade/LLMsOntology/blob/main/ExperimentResult/Readme.md) <hr>
+  - [GPT-4 VS Students in groups: Ignoring minor errors](ExperimentResult/Readme.md) <hr>
 
-### [Stories](https://github.com/saeedizade/LLMsOntology/blob/main/Stories/README.MD#here-are-ontology-stories-in-the-experiments)
+### [Stories](Stories/README.MD#here-are-ontology-stories-in-the-experiments)
 Here are the list of stories that used in the experiments. [Click here to see stories and their CQs](Stories/README.MD#here-are-ontology-stories-in-the-experiments)
 #### Short Narratives (Initial Experiment)
   - Short Story 1: Vegetarians 
