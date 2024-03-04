@@ -40,13 +40,20 @@ Conversely, in criteria involving the expression of domain and range for propert
 
 Considering the overall performance in phase two, **it was decided to proceed exclusively with GPT-4 in the subsequent phases of our research**. Again, it is worth noting that the purpose of the study is to explore the feasibility of LLMs to assist in OWL modeling, not to compare and quantify the capabilities of different models. %This decision was informed by the comparative analysis, which clearly indicated GPT-4’s superior capability in handling the complexities of ontology generation. The advanced performance of GPT-4 in meeting the set criteria reinforces its suitability for more sophisticated applications in ontology engineering and related fields.
 
- ![Alt Text]("images/excel, phase2.jpg" "Caption Text")
 
+![image](https://github.com/saeedizade/LLMsOntology/blob/main/ExperimentResult/images/excel%2C%20phase2.jpg)
 
-This table shows binary criteria (pass or fail) on some tasks (columns) for each pair of LLMs and Prompting Techniques). We took an average of each row and presented them as a final score. At the end, we proceed the experiment with GPT-4 and only removed Waterfall and Tree
+This table shows binary criteria (pass or fail) on some tasks (columns) for each pair of LLMs and Prompting Techniques). We took an average of each row and presented them as a final score. At the end, we proceed the experiment with GPT-4 and only removed the Waterfall and Tree.
 
 ## 3- Main Experiment
+Our experiment aimed to evaluate GPT-4's performance with various prompting techniques. We ran the model three times for each technique, and each one of the three stories, to obtain an average output, ensuring that our results were consistent and not influenced by random variations. Then, we compared these averaged outputs from our framework against the average of students' submissions. Also, each LLM-prompting technique was run three times to reduce the randomness of LLMs.
 
+This comparison is detailed in Figure \ref{fig:image1}, where each row represents a different ontology story. The figure is split into two sections: on the left, we compare the direct performance of students' submissions with our framework's outputs. This comparison focuses on addressing the competency questions. The right-hand side of first figure provides a modified view, ignoring minor errors (as defined previously). This approach allows us to evaluate how overlooking minor mistakes, which may be easy for even a novice ontology engineer to spot and fix, influences the overall effectiveness of the LLMs.
+
+Through this dual analysis, we offer a comprehensive view of the capabilities of LLMs in ontology modeling, comparing them with human-generated models both in direct performance and under a more lenient evaluation of minor issues.
+
+
+![](https://github.com/saeedizade/LLMsOntology/blob/main/ExperimentResult/images/all.jpg "Table comparing GPT-4 with different prompting techniques against students' first and last submissions. The figure shows the standard deviation and the average percentage of competency questions modelled by the produced ontology over three runs, with and without considering minor issues.")
 
 
 
