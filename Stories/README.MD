@@ -159,7 +159,7 @@ Here are the student's performances on the first submissions and the last (e.g. 
 
 ### Theatre story, minor errors are ignored:
 
-![](theatre ig.png)
+![](theatre%20ig.png)
 
 
 ### Music story:
@@ -168,7 +168,7 @@ Here are the student's performances on the first submissions and the last (e.g. 
 
 ### Music story, minor errors are ignored:
 
-![](music ig.png)
+![](music%20ig.png)
 
 ### Hospital story:
 
@@ -176,4 +176,4 @@ Here are the student's performances on the first submissions and the last (e.g. 
 
 ### Hospital story, minor errors are ignored:
 
-![](hos ig.png)
+![](hos%20ig.png)
