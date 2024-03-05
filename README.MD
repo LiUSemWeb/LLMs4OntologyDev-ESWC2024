@@ -45,5 +45,5 @@ Here are the list of stories that used in the experiments. [Click here to see st
   - Story 3: Hospital Story
 
 ### Students submissions
-We included the results of students submission of the course: [click here](ExperimentResult/Readme.md). However, due to university regulations, the OWL files of the students' submissions will not be available.
+We included the results of students' course submissions in the story section. However, due to university regulations, the OWL files of the students' submissions will not be available.
 More information [also can be found here](Stories/README.MD#students-submission-stats) 
