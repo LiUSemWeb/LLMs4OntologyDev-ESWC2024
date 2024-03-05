@@ -46,4 +46,4 @@ Here are the list of stories that used in the experiments. [Click here to see st
 
 ### Students submissions
 We included the results of students' course submissions in the story section. However, due to university regulations, the OWL files of the students' submissions will not be available.
-More information [also can be found here](Stories/README.MD#students-submission-stats) 
+But more information about stats and their performance [ can be found here](Stories/README.MD#students-submission-stats) 
