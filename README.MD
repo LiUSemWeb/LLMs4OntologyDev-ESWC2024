@@ -1,6 +1,6 @@
 # Navigating Ontology Development with Large Language Models
 
-This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various [prompting techniques](Prompts) and [models](Models/README.MD) for ontology development, focusing on creating a tool that helps ontologists by providing modeling suggestions.
+This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various [prompting techniques](Prompts) and [models](Models/README.MD) for ontology development, focusing on creating a tool that helps ontologists by providing modelling suggestions.
 We compared students' submissions of the ontology stories with LLMs to have a comparison baseline [click here to see the results](ExperimentResult/Readme.md). There were 10 groups of students (~2 students per group) and three submissions per story to pass the task (stories were in a master course)
 ## Contents
 ### Prompts
@@ -11,7 +11,7 @@ We compared students' submissions of the ontology stories with LLMs to have a co
   - [Self Consistency with Chain of Thoughts (CoT-SC)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#self-consistency-with-chain-of-thoughts-cot-sc)
   - [Graph of Thoughts (GoT)](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#graph-of-thoughts-got) <hr>
 ### [Models](Models#large-language-models)
-Here are the list of models that used in the experiments. [Click here to see more details](/Models#large-language-models)
+Here is the list of models used in the experiments. [Click here to see more details](/Models#large-language-models)
 
   - Open-Source Models
     - Lama-7B
@@ -44,5 +44,6 @@ Here are the list of stories that used in the experiments. [Click here to see st
   - Story 2: Music Production 
   - Story 3: Hospital Story
 
-
-
+### Students submissions
+We included the results of students submission of the course: [click here](ExperimentResult/Readme.md). However, due to university regulations, the OWL files of the students' submissions will not be available.
+More information [also can be found here](Stories/README.MD#students-submission-stats) 
