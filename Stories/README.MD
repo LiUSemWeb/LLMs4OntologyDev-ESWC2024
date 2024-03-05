@@ -151,5 +151,29 @@ We argue that the first submissions of student solutions would be comparable to 
 
 We argue that the student solutions, i.e. their first submission, would be comparable to what an average junior programmer would come up with after perhaps studying some online tutorials or similar. The last student submission, i.e. the one rendering a pass for that course task, represents an acceptable solution to the modelling problem, i.e. an ontology of sufficient quality with only a few issues still remaining. This gives us a bar to compare the LLM-generated models in terms of quality and modelling mistakes.
 
-Here are the student's performance on the first submissions and the last:
+Here are the student's performances on the first submissions and the last (e.g. G1First means student group number 1, first submission), 0 means their modelling cannot answer the CQ in that row, and 1 means it can model the CQ:
+
+### Theatre story:
+
 ![](theatre.png)
+
+### Theatre story, minor errors are ignored:
+
+![](theatre ig.png)
+
+
+### Music story:
+
+![](music.png)
+
+### Music story, minor errors are ignored:
+
+![](music ig.png)
+
+### Hospital story:
+
+![](hos.png)
+
+### Hospital story, minor errors are ignored:
+
+![](hos ig.png)
