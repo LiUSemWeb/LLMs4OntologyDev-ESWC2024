@@ -4,7 +4,7 @@ This repository contains documentation and implementations related to the paper 
 We compared students' submissions of the ontology stories with LLMs to have a comparison baseline [click here to see the results](ExperimentResult/Readme.md). There were 10 groups of students (~2 students per group) and three submissions per story to pass the task (stories were in a master course)
 ## Contents
 ### Prompts
-  - [Zero Shot Prompting](Prompts#zero-shot)
+  - [Zero Shot Prompting](Prompts/readme.md#zero-shot)
   - [Sub-task Decomposed Prompting: Waterfall approach](Prompts#sub-task-decomposed-prompting---waterfall)
   - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)](Prompts/README.md#sub-task-decomposed-prompting---competency-question-by-competency-question)
   - [Chain of Thoughts](https://github.com/saeedizade/LLMsOntology/tree/main/Prompts#chain-of-thoughts-cot)
