@@ -28,6 +28,7 @@ The stories are as follows:
 
 ## Short Narratives (Initial Experiment)
 ### Story 1: Vegetarians
+**Text of the story:**
 This story discusses two primary food categories: vegetarian foods and meat. Vegetarian animals exclusively eat vegetables, while non-vegetarian animals can consume vegetables or meat without restrictions on their diets. In the context of animals, rabbits are given as an example of vegetarian eaters. The relation "eats" describes the relationship between animals and the types of food they consume.
 here are the competency questions:
 ```
