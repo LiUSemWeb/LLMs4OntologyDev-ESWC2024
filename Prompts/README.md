@@ -16,6 +16,8 @@
     - Detail of Chain of Thoughts
     - Detail of Self Consistency with Chain of Thoughts (CoT-SC)
     - Detail of Graph of Thoughts (GoT)
+   
+      
 **By clicking on each header, you can read the exact text of the prompt.**    
 ## [Zero-Shot](#ZeroShot)
 This method entails a one-time interaction with the LLM, requiring no iteration or feedback loop, utilizing a prompt composed of the four components outlined in the previous section: the **header**, **helper**, **story**, and **footer**. Together, the sections of the prompt provide all the information needed for ontology construction in a single interaction.
