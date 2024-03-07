@@ -76,7 +76,9 @@ here are the competency questions:
 
 ## Ontology Narratives (Main Experiment)
 ### Story 1: Theatre Festival
-####Theatre productions
+**Text of the story:**
+
+#### Theatre productions
 During each year a number of theatre festivals are held in cities around Italy. In January 2007 a festival called “Roma Loves Shakespeare” took place in Rome. Two different productions of “The Merchant of Venice” participated, one from a theatre in Pisa and the other from a theatre institute in Venice, featuring an ensemble of university art students. Other plays were Othello and a Midsummer Night’s Dream.
 The Grand Theatre in Rome offers two theatre shows each evening during September and October 2009. The play set up in this period is the "Merchant of Venice",given through an ensemble of well-known Italian actors. The Merchant of Venice was written during 1596 to 1598 by William Shakespeare, and it has 5 distinct acts. The premier of this production at The Grand Theatre was on September 7. Il Gazzettino gave the setup of the play 5 stars in a recent review.
 Fabio Bianchi is an Italian actor employed at the theatre since May 2004, he is a part of the ensemble setting up the Merchant of Venice and he plays the Duke of Venice but also a servant in one of the scenes. During the second and third week of September the role of Shylock is played by Arnold Schwarzenegger as a special guest actor.
@@ -99,6 +101,8 @@ here are the competency questions:
 '15- A production has exactly one premier.',]
 ```
 ### Story 2: Music Production
+**Text of the story:**
+
 Music production
 The current configuration of the “Red Hot Chili Peppers” are: Anthony Kiedis (vocals), Flea (bass, trumpet, keyboards, and vocals), John Frusciante (guitar), and Chad Smith (drums).  The line-up has changed a few times during they years, Frusciante replaced Hillel Slovak in 1988, and when Jack Irons left the band he was briefly replaced by D.H. Peligo until the band found Chad Smith. In addition to playing guitars for Red hot Chili Peppers Frusciante also contributed to the band “The Mars Volta” as a vocalist for some time.
 From September 2004, the Red Hot Chili Peppers started recording the album “Stadium Arcadium”. The album contains 28 tracks and was released on May 5 2006. It includes a track of the song “Hump de Bump”, which was composed in January 26, 2004.
@@ -122,6 +126,8 @@ here are the competency questions:
 '15- A record always contains at least one track.',]
 ```
 ### Story 2: Hospital Story
+**Text of the story:**
+
 Hospital setting
 Pasquale Di Gennaro first studied to become a nursing assistant, but after working some years he decided to continue studying to become a certified nurse. He took his degree in May 2001. On September 21 (2001) he was employed at Ospedale Riunito delle Tre Valli in the city of Nocera Inferiore (IT). In the hospital there are different unions organising the staff. Pasquale Di Gennaro has been the union representative for male nurses at Ospedale Riunito delle Tre Valli from 2002. Senior doctors regularly evaluate all employees working with patient care, and these written statements are stored for future reference.
 To constantly update their knowledge both nurses and doctors read research articles that can be found in article collections at the hospital library. Article collections are usually available both as books and electronically on CDs. In 2008 an article collection entitled “Nurse practices in cancer patient care – longitudinal studies at Italian hospitals” was published as a book. The book contains an article by Pasquale Di Gennaro, entitled “A 5 year-program for improving cancer care – experiences and future directions”. In total the book version of this collection has 346 pages. For discussing new articles Italian hospitals regularly hold seminars where a number of articles are presented. In December 2008 such a seminar was held in Nocera Inferiore at Ospedale Riunito delle Tre Valli.
