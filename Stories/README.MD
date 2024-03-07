@@ -29,6 +29,7 @@ The stories are as follows:
 ## Short Narratives (Initial Experiment)
 ### Story 1: Vegetarians
 **Text of the story:**
+
 This story discusses two primary food categories: vegetarian foods and meat. Vegetarian animals exclusively eat vegetables, while non-vegetarian animals can consume vegetables or meat without restrictions on their diets. In the context of animals, rabbits are given as an example of vegetarian eaters. The relation "eats" describes the relationship between animals and the types of food they consume.
 here are the competency questions:
 ```
@@ -39,7 +40,9 @@ here are the competency questions:
   '5- Relation eats is a relation between animals and foods.',
   '6- create an individual rabbit R1 that eats individual meat m1']
 ```
-### Story 2: Lena
+### Story 2: Cars Story
+**Text of the story:**
+
 This narrative outlines a unique world that models relationships between gender, preferences, and objects, allowing for insights and deductions based on the set ontology.
 here are the competency questions:
 ```
@@ -60,6 +63,8 @@ here are the competency questions:
 '15- Add an instance of a woman named Lena, add a man named Thomas, then add the fact that Thomas adores Lena. Run a reasoner over the ontology. What is concluded about Lena?',]
 ```
 ### Story 3: Big Festival
+**Text of the story:**
+
 In this ontology modeling, we are trying to model a theatre festival ontology. A theatre festival is a curated event or series of events that showcase a variety of theatrical performances, often held over a specific period of time in a particular location. These festivals bring together multiple theatre productions, ranging from plays and musicals to experimental and avant-garde performances. Each festival has several plays in it.
 here are the competency questions:
 ```
