@@ -5,13 +5,13 @@ We compared students' submissions of the ontology stories with LLMs to have a co
 ## Contents
 ### Prompts
   - [Zero Shot Prompting](Prompts#zero-shot)
-  - [Sub-task Decomposed Prompting: Waterfall approach](Prompts#sub-task-decomposed-prompting---waterfall)
+  - [Sub-task Decomposed Prompting: Waterfall approach](Prompts/README.md#sub-task-decomposed-prompting---waterfall)
   - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)](Prompts/README.md#sub-task-decomposed-prompting---competency-question-by-competency-question)
   - [Chain of Thoughts](Prompts/README.md#chain-of-thoughts-cot)
   - [Self Consistency with Chain of Thoughts (CoT-SC)](Prompts/README.md#self-consistency-with-chain-of-thoughts-cot-sc)
   - [Graph of Thoughts (GoT)](Prompts/README.md#graph-of-thoughts-got) <hr>
-### [Models](Models#large-language-models)
-Here is the list of models used in the experiments. [Click here to see more details](Models#large-language-models)
+### [Models](Models/README.md#large-language-models)
+Here is the list of models used in the experiments. [Click here to see more details](Models/README.md#large-language-models)
 
   - Open-Source Models
     - Lama-7B
