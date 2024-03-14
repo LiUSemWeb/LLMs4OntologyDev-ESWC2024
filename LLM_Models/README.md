@@ -19,7 +19,7 @@ By using this broad selection, we aimed to achieve a holistic understanding and 
 
 An important component when using LLMs is the memory. Since an LLM can only handle a certain size of the current context, i.e., what it takes into account when addressing a new prompt, therefore an external memory can be used as a module that stores information, such as previously generated code, plans and provides a history of past communications with an LLM for future prompts if the prompting techniques need them. In our experiments, a memory is used for all prompting methods except zero-shop. 
 
-
+ 
 ## GPT Models API
 For accessing GPT-3.5 and GPT-4, we used Microsoft Azure API. The function for communicating with API is like this: 
 ```python
