@@ -167,25 +167,25 @@ Here are the student's performances on the first submissions and the last (e.g. 
 
 ### Theatre story:
 
-![](theatre.png)
+![](Images/theatre.png)
 
 ### Theatre story, minor errors are ignored:
 
-![](theatre%20ig.png)
+![](Images/theatre%20ig.png)
 
 
 ### Music story:
 
-![](music.png)
+![](Images/music.png)
 
 ### Music story, minor errors are ignored:
 
-![](music%20ig.png)
+![](Images/music%20ig.png)
 
 ### Hospital story:
 
-![](hos.png)
+![](Images/hos.png)
 
 ### Hospital story, minor errors are ignored:
 
-![](hos%20ig.png)
+![](Images/hos%20ig.png)
