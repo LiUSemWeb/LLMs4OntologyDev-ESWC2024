@@ -1,5 +1,5 @@
 class DecomposedPromtingWaterfall:
-
+ 
   def __init__(self):
     self.header = '''Your task is to contribute in creation of a well-structured ontology information that appeared in the given story, requirements, and restrictions (if there are any).
 '''
