@@ -1,7 +1,7 @@
 # Navigating Ontology Development with Large Language Models
 
 This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various [prompting techniques](Prompts) and [models](LLM_Models/README.md) for ontology development, focusing on creating a tool that helps ontologists by providing modelling suggestions.
-We compared students' submissions of the ontology stories with LLMs to have a comparison baseline [click here to see the results](ExperimentResult/Readme.md). There were 10 groups of students (~2 students per group) and three submissions per story to pass the task (stories were in a master course). LLMs outputs for each prompting [technique are stored here](LLM_OWL outputs).
+We compared students' submissions of the ontology stories with LLMs to have a comparison baseline [click here to see the results](ExperimentResult/Readme.md). There were 10 groups of students (~2 students per group) and three submissions per story to pass the task (stories were in a master course). LLMs outputs for each prompting [technique are stored here](LLM_OWL outputs/readme.md).
 ## Contents
 ### Prompts
   - [Zero-Shot Prompting](Prompts/Zeroshot.md)
