@@ -1,0 +1,272 @@
+@prefix : <http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18/> .
+
+<http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#BandMembers
+:BandMembers rdf:type owl:ObjectProperty ;
+             rdfs:domain :Band ;
+             rdfs:range :BandMembership .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#ContainRecord
+:ContainRecord rdf:type owl:ObjectProperty ;
+               rdfs:domain :Record ;
+               rdfs:range :Track .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#CriticOfRecord
+:CriticOfRecord rdf:type owl:ObjectProperty ;
+                rdfs:domain :Record ;
+                rdfs:range :CiriticCriticer .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#HasTrack
+:HasTrack rdf:type owl:ObjectProperty ;
+          rdfs:domain :Album ;
+          rdfs:range :Track .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#LocatedIn
+:LocatedIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :Location ;
+           rdfs:range :City ,
+                      :Country ,
+                      :Region .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#LocationOfPerformance
+:LocationOfPerformance rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Performance ;
+                       rdfs:range :Location .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#PerformancSongs
+:PerformancSongs rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Performance ;
+                 rdfs:range :SongInPerformance .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Play_instrument
+:Play_instrument rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Person ;
+                 rdfs:range :Instruments .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#PlayerInBand
+:PlayerInBand rdf:type owl:ObjectProperty ;
+              rdfs:domain :Person ;
+              rdfs:range :BandMembership .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#RecordedInTime
+:RecordedInTime rdf:type owl:ObjectProperty ;
+                rdfs:domain :Album ;
+                rdfs:range :PointOfTime .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Role
+:Role rdf:type owl:ObjectProperty ;
+      rdfs:domain :Person ;
+      rdfs:range :RoleInBand .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#RoleInBand
+:RoleInBand rdf:type owl:ObjectProperty ;
+            rdfs:domain :RoleInBand ;
+            rdfs:range :Band .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#RoleInBandTime
+:RoleInBandTime rdf:type owl:ObjectProperty ;
+                rdfs:domain :RoleInBand ;
+                rdfs:range :PointOfTime .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#SongInPerformance
+:SongInPerformance rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Song ;
+                   rdfs:range :SongInPerformance .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#SongOfTrack
+:SongOfTrack rdf:type owl:ObjectProperty ;
+             rdfs:domain :Song ;
+             rdfs:range :SongsOfTrack .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#TimeOfMembership
+:TimeOfMembership rdf:type owl:ObjectProperty ;
+                  rdfs:domain :BandMembership ;
+                  rdfs:range :PointOfTime .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#TrackContainSongs
+:TrackContainSongs rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Track ;
+                   rdfs:range :SongsOfTrack .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#WroteCritic
+:WroteCritic rdf:type owl:ObjectProperty ;
+             rdfs:domain :Criticer ;
+             rdfs:range :CiriticCriticer .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#AlbumReleaseDay
+:AlbumReleaseDay rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Album ;
+                 rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#ComposedInTime
+:ComposedInTime rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Song ;
+                rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#CriticText
+:CriticText rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :CiriticCriticer ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#PerformanceDate
+:PerformanceDate rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Performance ;
+                 rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Album
+:Album rdf:type owl:Class ;
+       rdfs:subClassOf :ArtProductions .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#ArtProductions
+:ArtProductions rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#ArtistsGroups
+:ArtistsGroups rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Band
+:Band rdf:type owl:Class ;
+      rdfs:subClassOf :ArtistsGroups .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#BandMembership
+:BandMembership rdf:type owl:Class ;
+                rdfs:subClassOf :ArtistsGroups .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#CiriticCriticer
+:CiriticCriticer rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#City
+:City rdf:type owl:Class ;
+      rdfs:subClassOf :Location .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Country
+:Country rdf:type owl:Class ;
+         rdfs:subClassOf :Location .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Critic
+:Critic rdf:type owl:Class ;
+        rdfs:subClassOf :ArtProductions .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Criticer
+:Criticer rdf:type owl:Class ;
+          rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Instruments
+:Instruments rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Location
+:Location rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Performance
+:Performance rdf:type owl:Class ;
+             rdfs:subClassOf :ArtProductions .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf :ArtistsGroups .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#PointOfTime
+:PointOfTime rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Record
+:Record rdf:type owl:Class ;
+        rdfs:subClassOf :ArtProductions ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :HasTrack ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Track
+                        ] .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Region
+:Region rdf:type owl:Class ;
+        rdfs:subClassOf :Location .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Role
+:Role rdf:type owl:Class ;
+      rdfs:subClassOf :ArtistsGroups .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#RoleInBand
+:RoleInBand rdf:type owl:Class ;
+            rdfs:subClassOf :ArtistsGroups .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Song
+:Song rdf:type owl:Class ;
+      rdfs:subClassOf :ArtProductions .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#SongInPerformance
+:SongInPerformance rdf:type owl:Class ;
+                   rdfs:subClassOf :ArtProductions .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#SongsOfTrack
+:SongsOfTrack rdf:type owl:Class ;
+              rdfs:subClassOf :ArtProductions .
+
+
+###  http://www.semanticweb.org/mohsa33/ontologies/2023/10/untitled-ontology-18#Track
+:Track rdf:type owl:Class ;
+       rdfs:subClassOf :ArtProductions .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

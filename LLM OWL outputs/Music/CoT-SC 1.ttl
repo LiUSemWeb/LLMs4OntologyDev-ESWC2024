@@ -1,0 +1,812 @@
+# *******************
+# output of plan 1:
+@prefix : <http://www.example.org/test#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Cl_Musician rdf:type owl:Class .
+:Cl_Band rdf:type owl:Class .
+:Cl_Instrument rdf:type owl:Class .
+:Cl_Album rdf:type owl:Class .
+:Cl_Song rdf:type owl:Class .
+:Cl_Critic rdf:type owl:Class .
+:Cl_Performance rdf:type owl:Class .
+:Cl_City rdf:type owl:Class .
+:Cl_Region rdf:type owl:Class .
+:Cl_Country rdf:type owl:Class .
+
+:Cl_BandMember rdf:type owl:Class .
+:Cl_BandMember rdfs:subClassOf :Cl_Musician .
+
+:Cl_BandHistory rdf:type owl:Class .
+:Cl_BandHistory rdfs:subClassOf :Cl_Band .
+
+:Cl_AlbumTrack rdf:type owl:Class .
+:Cl_AlbumTrack rdfs:subClassOf :Cl_Album .
+
+:Cl_SongComposition rdf:type owl:Class .
+:Cl_SongComposition rdfs:subClassOf :Cl_Song .
+
+:Cl_CriticReview rdf:type owl:Class .
+:Cl_CriticReview rdfs:subClassOf :Cl_Critic .
+
+:Cl_PerformanceDetail rdf:type owl:Class .
+:Cl_PerformanceDetail rdfs:subClassOf :Cl_Performance .
+
+:Cl_CityLocation rdf:type owl:Class .
+:Cl_CityLocation rdfs:subClassOf :Cl_City .
+
+:Cl_RegionLocation rdf:type owl:Class .
+:Cl_RegionLocation rdfs:subClassOf :Cl_Region .
+
+:playsInstrument rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Musician ;
+    rdfs:range :Cl_Instrument .
+
+:memberOfBand rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_BandMember ;
+    rdfs:range :Cl_Band .
+
+:hasRoleInBand rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_BandMember ;
+    rdfs:range xsd:string .
+
+:recordedDuring rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Album ;
+    rdfs:range xsd:dateTime .
+
+:containsTrack rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Album ;
+    rdfs:range :Cl_AlbumTrack .
+
+:releasedOn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_Album ;
+    rdfs:range xsd:date .
+
+:isTrackOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_AlbumTrack ;
+    rdfs:range :Cl_Song .
+
+:composedOn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_SongComposition ;
+    rdfs:range xsd:date .
+
+:saysAboutRecord rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_CriticReview ;
+    rdfs:range :Cl_Album .
+
+:performanceOn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_PerformanceDetail ;
+    rdfs:range xsd:date .
+
+:playedInPerformance rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_PerformanceDetail ;
+    rdfs:range :Cl_Song .
+
+:performanceIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_PerformanceDetail ;
+    rdfs:range :Cl_City .
+
+:locatedInRegion rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_CityLocation ;
+    rdfs:range :Cl_Region .
+
+:locatedInCountry rdf:type owl:ObjectProperty ;
+    rdfs:domain :Cl_RegionLocation ;
+    rdfs:range :Cl_Country .
+
+:Cl_Album rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :containsTrack ;
+    owl:minCardinality 1
+] .
+
+:Cl_BandMember rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :memberOfBand ;
+    owl:someValuesFrom :Cl_Band
+] .
+
+:Cl_BandHistory rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :memberOfBand ;
+    owl:someValuesFrom :Cl_BandMember
+] .
+
+:Cl_AlbumTrack rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :isTrackOf ;
+    owl:someValuesFrom :Cl_Song
+] .
+
+:Cl_SongComposition rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :composedOn ;
+    owl:someValuesFrom xsd:date
+] .
+
+:Cl_CriticReview rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :saysAboutRecord ;
+    owl:someValuesFrom :Cl_Album
+] .
+
+:Cl_PerformanceDetail rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :performanceOn ;
+    owl:someValuesFrom xsd:date
+] .
+
+:Cl_CityLocation rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :locatedInRegion ;
+    owl:someValuesFrom :Cl_Region
+] .
+
+:Cl_RegionLocation rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :locatedInCountry ;
+    owl:someValuesFrom :Cl_Country
+] .
+
+:playsInstrument rdf:type owl:InverseFunctionalProperty .
+:memberOfBand rdf:type owl:InverseFunctionalProperty .
+:hasRoleInBand rdf:type owl:InverseFunctionalProperty .
+:recordedDuring rdf:type owl:InverseFunctionalProperty .
+:containsTrack rdf:type owl:InverseFunctionalProperty .
+:releasedOn rdf:type owl:InverseFunctionalProperty .
+:isTrackOf rdf:type owl:InverseFunctionalProperty .
+:composedOn rdf:type owl:InverseFunctionalProperty .
+:saysAboutRecord rdf:type owl:InverseFunctionalProperty .
+:performanceOn rdf:type owl:InverseFunctionalProperty .
+:playedInPerformance rdf:type owl:InverseFunctionalProperty .
+:performanceIn rdf:type owl:InverseFunctionalProperty .
+:locatedInRegion rdf:type owl:InverseFunctionalProperty .
+:locatedInCountry rdf:type owl:InverseFunctionalProperty .
+
+:Cl_Musician rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :playsInstrument ;
+    owl:allValuesFrom :Cl_Instrument
+] .
+
+:Cl_BandMember rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :memberOfBand ;
+    owl:allValuesFrom :Cl_Band
+] .
+
+:Cl_BandMember rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :hasRoleInBand ;
+    owl:allValuesFrom xsd:string
+] .
+
+:Cl_Album rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :recordedDuring ;
+    owl:allValuesFrom xsd:dateTime
+] .
+
+:Cl_Album rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :containsTrack ;
+    owl:allValuesFrom :Cl_AlbumTrack
+] .
+
+:Cl_Album rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :releasedOn ;
+    owl:allValuesFrom xsd:date
+] .
+
+:Cl_AlbumTrack rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :isTrackOf ;
+    owl:allValuesFrom :Cl_Song
+] .
+
+:Cl_SongComposition rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :composedOn ;
+    owl:allValuesFrom xsd:date
+] .
+
+:Cl_CriticReview rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :saysAboutRecord ;
+    owl:allValuesFrom :Cl_Album
+] .
+
+:Cl_PerformanceDetail rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :performanceOn ;
+    owl:allValuesFrom xsd:date
+] .
+
+:Cl_PerformanceDetail rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :playedInPerformance ;
+    owl:allValuesFrom :Cl_Song
+] .
+
+:Cl_PerformanceDetail rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :performanceIn ;
+    owl:allValuesFrom :Cl_City
+] .
+
+:Cl_CityLocation rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :locatedInRegion ;
+    owl:allValuesFrom :Cl_Region
+] .
+
+:Cl_RegionLocation rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :locatedInCountry ;
+    owl:allValuesFrom :Cl_Country
+] .
+
+:Cl_Musician rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :playsInstrument ;
+    owl:minCardinality 1
+] .
+
+:Cl_BandMember rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :memberOfBand ;
+    owl:minCardinality 1
+] .
+
+:Cl_BandMember rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :hasRoleInBand ;
+    owl:minCardinality 1
+] .
+
+:Cl_Album rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :recordedDuring ;
+    owl:minCardinality 1
+] .
+
+:Cl_Album rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :containsTrack ;
+    owl:minCardinality 1
+] .
+
+:Cl_Album rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :releasedOn ;
+    owl:minCardinality 1
+] .
+
+:Cl_AlbumTrack rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :isTrackOf ;
+    owl:minCardinality 1
+] .
+
+:Cl_SongComposition rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :composedOn ;
+    owl:minCardinality 1
+] .
+
+:Cl_CriticReview rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :saysAboutRecord ;
+    owl:minCardinality 1
+] .
+
+:Cl_PerformanceDetail rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :performanceOn ;
+    owl:minCardinality 1
+] .
+
+:Cl_PerformanceDetail rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :playedInPerformance ;
+    owl:minCardinality 1
+] .
+
+:Cl_PerformanceDetail rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :performanceIn ;
+    owl:minCardinality 1
+] .
+
+:Cl_CityLocation rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :locatedInRegion ;
+    owl:minCardinality 1
+] .
+
+:Cl_RegionLocation rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :locatedInCountry ;
+    owl:minCardinality 1
+] .
+# *******************
+# output of plan 2:
+# @prefix : <http://www.example.org/test#> .
+# @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# :Cl_Musician rdf:type owl:Class .
+# :Cl_Band rdf:type owl:Class .
+# :Cl_Instrument rdf:type owl:Class .
+# :Cl_Album rdf:type owl:Class .
+# :Cl_Song rdf:type owl:Class .
+# :Cl_Track rdf:type owl:Class .
+# :Cl_Critic rdf:type owl:Class .
+# :Cl_Performance rdf:type owl:Class .
+# :Cl_City rdf:type owl:Class .
+# :Cl_Region rdf:type owl:Class .
+# :Cl_Country rdf:type owl:Class .
+
+# :Cl_Musician rdfs:subClassOf :Cl_Person .
+# :Cl_BandMember rdfs:subClassOf :Cl_Musician .
+# :Cl_Critic rdfs:subClassOf :Cl_Person .
+# :Cl_Instrument rdfs:subClassOf :Cl_Object .
+# :Cl_Song rdfs:subClassOf :Cl_Artwork .
+# :Cl_Album rdfs:subClassOf :Cl_Artwork .
+# :Cl_Track rdfs:subClassOf :Cl_Artwork .
+# :Cl_Performance rdfs:subClassOf :Cl_Event .
+# :Cl_City rdfs:subClassOf :Cl_Location .
+# :Cl_Region rdfs:subClassOf :Cl_Location .
+# :Cl_Country rdfs:subClassOf :Cl_Location .
+
+# :playsInstrument rdf:type owl:ObjectProperty ;
+#     rdfs:domain :Cl_Musician ;
+#     rdfs:range :Cl_Instrument .
+
+# :memberOfBand rdf:type owl:ObjectProperty ;
+#     rdfs:domain :Cl_Musician ;
+#     rdfs:range :Cl_Band .
+
+# :hasRole rdf:type owl:ObjectProperty ;
+#     rdfs:domain :Cl_Musician ;
+#     rdfs:range :Cl_Band .
+
+# :recordedDuring rdf:type owl:ObjectProperty ;
+#     rdfs:domain :Cl_Album ;
+#     rdfs:range xsd:dateTime .
+
+# :containsTrack rdf:type owl:ObjectProperty ;
+#     rdfs:domain :Cl_Album ;
+#     rdfs:range :Cl_Track .
+
+# :releasedOn rdf:type owl:DatatypeProperty ;
+#     rdfs:domain :Cl_Album ;
+#     rdfs:range xsd:date .
+
+# :isRecordingOf rdf:type owl:ObjectProperty ;
+#     rdfs:domain :Cl_Track ;
+#     rdfs:range :Cl_Song .
+
+# :composedOn rdf:type owl:DatatypeProperty ;
+#     rdfs:domain :Cl_Song ;
+#     rdfs:range xsd:date .
+
+# :saysAboutRecord rdf:type owl:ObjectProperty ;
+#     rdfs:domain :Cl_Critic ;
+#     rdfs:range :Cl_Album .
+
+# :performanceDate rdf:type owl:DatatypeProperty ;
+#     rdfs:domain :Cl_Performance ;
+#     rdfs:range xsd:date .
+
+# :playedSong rdf:type owl:ObjectProperty ;
+#     rdfs:domain :Cl_Performance ;
+#     rdfs:range :Cl_Song .
+
+# :performanceLocation rdf:type owl:ObjectProperty ;
+#     rdfs:domain :Cl_Performance ;
+#     rdfs:range :Cl_City .
+
+# :locatedInRegion rdf:type owl:ObjectProperty ;
+#     rdfs:domain :Cl_City ;
+#     rdfs:range :Cl_Region .
+
+# :locatedInCountry rdf:type owl:ObjectProperty ;
+#     rdfs:domain :Cl_Region ;
+#     rdfs:range :Cl_Country .
+
+# :Cl_Album rdfs:subClassOf [
+#     rdf:type owl:Restriction ;
+#     owl:onProperty :containsTrack ;
+#     owl:minCardinality 1
+# ] .
+
+# :AnthonyKiedis rdf:type :Cl_Musician .
+# :Flea rdf:type :Cl_Musician .
+# :JohnFrusciante rdf:type :Cl_Musician .
+# :ChadSmith rdf:type :Cl_Musician .
+# :RedHotChiliPeppers rdf:type :Cl_Band .
+# :Guitar rdf:type :Cl_Instrument .
+# :Bass rdf:type :Cl_Instrument .
+# :Trumpet rdf:type :Cl_Instrument .
+# :Keyboards rdf:type :Cl_Instrument .
+# :Vocals rdf:type :Cl_Instrument .
+# :Drums rdf:type :Cl_Instrument .
+# :StadiumArcadium rdf:type :Cl_Album .
+# :HumpDeBump rdf:type :Cl_Song .
+# :CrianHiatt rdf:type :Cl_Critic .
+# :PortlandPerformance rdf:type :Cl_Performance .
+# :Portland rdf:type :Cl_City .
+# :Oregon rdf:type :Cl_Region .
+# :US rdf:type :Cl_Country .
+
+# :AnthonyKiedis :playsInstrument :Vocals .
+# :Flea :playsInstrument :Bass .
+# :Flea :playsInstrument :Trumpet .
+# :Flea :playsInstrument :Keyboards .
+# :Flea :playsInstrument :Vocals .
+# :JohnFrusciante :playsInstrument :Guitar .
+# :ChadSmith :playsInstrument :Drums .
+
+# :AnthonyKiedis :memberOfBand :RedHotChiliPeppers .
+# :Flea :memberOfBand :RedHotChiliPeppers .
+# :JohnFrusciante :memberOfBand :RedHotChiliPeppers .
+# :ChadSmith :memberOfBand :RedHotChiliPeppers .
+
+# :StadiumArcadium :recordedDuring "2004-09-01T00:00:00"^^xsd:dateTime .
+# :StadiumArcadium :containsTrack :HumpDeBump .
+# :StadiumArcadium :releasedOn "2006-05-05"^^xsd:date .
+
+# :HumpDeBump :isRecordingOf :HumpDeBump .
+# :HumpDeBump :composedOn "2004-01-26"^^xsd:date .
+
+# :CrianHiatt :saysAboutRecord :StadiumArcadium .
+
+# :PortlandPerformance :performanceDate "2006-08-11"^^xsd:date .
+# :PortlandPerformance :playedSong :HumpDeBump .
+# :PortlandPerformance :performanceLocation :Portland .
+
+# :Portland :locatedInRegion :Oregon .
+# :Oregon :locatedInCountry :US .
+
+# :AnthonyKiedis :hasRole "Vocalist" .
+# :Flea :hasRole "Bassist" .
+# :Flea :hasRole "Trumpeter" .
+# :Flea :hasRole "Keyboardist" .
+# :Flea :hasRole "Vocalist" .
+# :JohnFrusciante :hasRole "Guitarist" .
+# :ChadSmith :hasRole "Drummer" .
+
+# :RedHotChiliPeppers :hasMember :AnthonyKiedis .
+# :RedHotChiliPeppers :hasMember :Flea .
+# :RedHotChiliPeppers :hasMember :JohnFrusciante .
+# :RedHotChiliPeppers :hasMember :ChadSmith .
+
+# :RedHotChiliPeppers :hasFormerMember :HillelSlovak .
+# :RedHotChiliPeppers :hasFormerMember :JackIrons .
+# :RedHotChiliPeppers :hasFormerMember :DHPeligo .
+
+# :JohnFrusciante :memberOfBand :TheMarsVolta .
+# :JohnFrusciante :hasRole "Vocalist" in :TheMarsVolta .
+# *******************
+# output of plan 3:
+# @prefix : <http://www.example.org/test#> .
+# @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# :Cl_Person a rdfs:Class .
+# :Cl_Band a rdfs:Class .
+# :Cl_Instrument a rdfs:Class .
+# :Cl_Album a rdfs:Class .
+# :Cl_Song a rdfs:Class .
+# :Cl_Track a rdfs:Class .
+# :Cl_Critic a rdfs:Class .
+# :Cl_Performance a rdfs:Class .
+# :Cl_City a rdfs:Class .
+# :Cl_Region a rdfs:Class .
+# :Cl_Country a rdfs:Class .
+
+# :playsInstrument a rdf:Property ;
+#     rdfs:domain :Cl_Person ;
+#     rdfs:range :Cl_Instrument .
+
+# :memberOfBand a rdf:Property ;
+#     rdfs:domain :Cl_Person ;
+#     rdfs:range :Cl_Band .
+
+# :roleInBand a rdf:Property ;
+#     rdfs:domain :Cl_Person ;
+#     rdfs:range xsd:string .
+
+# :recordedAlbum a rdf:Property ;
+#     rdfs:domain :Cl_Band ;
+#     rdfs:range :Cl_Album .
+
+# :albumContainsTrack a rdf:Property ;
+#     rdfs:domain :Cl_Album ;
+#     rdfs:range :Cl_Track .
+
+# :albumReleaseDate a rdf:Property ;
+#     rdfs:domain :Cl_Album ;
+#     rdfs:range xsd:date .
+
+# :trackIsRecordingOf a rdf:Property ;
+#     rdfs:domain :Cl_Track ;
+#     rdfs:range :Cl_Song .
+
+# :songComposedDate a rdf:Property ;
+#     rdfs:domain :Cl_Song ;
+#     rdfs:range xsd:date .
+
+# :criticReview a rdf:Property ;
+#     rdfs:domain :Cl_Critic ;
+#     rdfs:range xsd:string .
+
+# :performanceDate a rdf:Property ;
+#     rdfs:domain :Cl_Performance ;
+#     rdfs:range xsd:date .
+
+# :performanceContainsSong a rdf:Property ;
+#     rdfs:domain :Cl_Performance ;
+#     rdfs:range :Cl_Song .
+
+# :performanceLocation a rdf:Property ;
+#     rdfs:domain :Cl_Performance ;
+#     rdfs:range :Cl_City .
+
+# :cityInRegion a rdf:Property ;
+#     rdfs:domain :Cl_City ;
+#     rdfs:range :Cl_Region .
+
+# :regionInCountry a rdf:Property ;
+#     rdfs:domain :Cl_Region ;
+#     rdfs:range :Cl_Country .
+
+# :AnthonyKiedis a :Cl_Person ;
+#     :playsInstrument :Vocals, :Bass, :Trumpet, :Keyboards ;
+#     :memberOfBand :RedHotChiliPeppers ;
+#     :roleInBand "Vocalist" .
+
+# :Flea a :Cl_Person ;
+#     :playsInstrument :Bass, :Trumpet, :Keyboards, :Vocals ;
+#     :memberOfBand :RedHotChiliPeppers ;
+#     :roleInBand "Bassist, Trumpeter, Keyboardist, Vocalist" .
+
+# :JohnFrusciante a :Cl_Person ;
+#     :playsInstrument :Guitar ;
+#     :memberOfBand :RedHotChiliPeppers, :TheMarsVolta ;
+#     :roleInBand "Guitarist, Vocalist" .
+
+# :ChadSmith a :Cl_Person ;
+#     :playsInstrument :Drums ;
+#     :memberOfBand :RedHotChiliPeppers ;
+#     :roleInBand "Drummer" .
+
+# :RedHotChiliPeppers a :Cl_Band ;
+#     :recordedAlbum :StadiumArcadium .
+
+# :StadiumArcadium a :Cl_Album ;
+#     :albumContainsTrack :HumpDeBumpTrack ;
+#     :albumReleaseDate "2006-05-05"^^xsd:date .
+
+# :HumpDeBumpTrack a :Cl_Track ;
+#     :trackIsRecordingOf :HumpDeBumpSong .
+
+# :HumpDeBumpSong a :Cl_Song ;
+#     :songComposedDate "2004-01-26"^^xsd:date .
+
+# :CrianHiatt a :Cl_Critic ;
+#     :criticReview "The most ambitious work in his twenty-three-year career" .
+
+# :PortlandPerformance a :Cl_Performance ;
+#     :performanceDate "2006-08-11"^^xsd:date ;
+#     :performanceContainsSong :HumpDeBumpSong ;
+#     :performanceLocation :Portland .
+
+# :Portland a :Cl_City ;
+#     :cityInRegion :Oregon .
+
+# :Oregon a :Cl_Region ;
+#     :regionInCountry :US .
+
+# :US a :Cl_Country .
+
+# :StadiumArcadium rdfs:subClassOf :Cl_Album ;
+#     rdfs:subClassOf [ rdf:type owl:Restriction ;
+#                       owl:minCardinality 1 ;
+#                       owl:onProperty :albumContainsTrack ] .
+
+# :StadiumArcadium a :Cl_Album ;
+#     :albumContainsTrack :Track1, :Track2, :Track3, :Track4, :Track5, :Track6, :Track7, :Track8, :Track9, :Track10, :Track11, :Track12, :Track13, :Track14, :Track15, :Track16, :Track17, :Track18, :Track19, :Track20, :Track21, :Track22, :Track23, :Track24, :Track25, :Track26, :Track27, :Track28 .
+
+# :Track1 a :Cl_Track ;
+#     :trackIsRecordingOf :Song1 .
+
+# :Track2 a :Cl_Track ;
+#     :trackIsRecordingOf :Song2 .
+
+# :Track3 a :Cl_Track ;
+#     :trackIsRecordingOf :Song3 .
+
+# :Track4 a :Cl_Track ;
+#     :trackIsRecordingOf :Song4 .
+
+# :Track5 a :Cl_Track ;
+#     :trackIsRecordingOf :Song5 .
+
+# :Track6 a :Cl_Track ;
+#     :trackIsRecordingOf :Song6 .
+
+# :Track7 a :Cl_Track ;
+#     :trackIsRecordingOf :Song7 .
+
+# :Track8 a :Cl_Track ;
+#     :trackIsRecordingOf :Song8 .
+
+# :Track9 a :Cl_Track ;
+#     :trackIsRecordingOf :Song9 .
+
+# :Track10 a :Cl_Track ;
+#     :trackIsRecordingOf :Song10 .
+
+# :Track11 a :Cl_Track ;
+#     :trackIsRecordingOf :Song11 .
+
+# :Track12 a :Cl_Track ;
+#     :trackIsRecordingOf :Song12 .
+
+# :Track13 a :Cl_Track ;
+#     :trackIsRecordingOf :Song13 .
+
+# :Track14 a :Cl_Track ;
+#     :trackIsRecordingOf :Song14 .
+
+# :Track15 a :Cl_Track ;
+#     :trackIsRecordingOf :Song15 .
+
+# :Track16 a :Cl_Track ;
+#     :trackIsRecordingOf :Song16 .
+
+# :Track17 a :Cl_Track ;
+#     :trackIsRecordingOf :Song17 .
+
+# :Track18 a :Cl_Track ;
+#     :trackIsRecordingOf :Song18 .
+
+# :Track19 a :Cl_Track ;
+#     :trackIsRecordingOf :Song19 .
+
+# :Track20 a :Cl_Track ;
+#     :trackIsRecordingOf :Song20 .
+
+# :Track21 a :Cl_Track ;
+#     :trackIsRecordingOf :Song21 .
+
+# :Track22 a :Cl_Track ;
+#     :trackIsRecordingOf :Song22 .
+
+# :Track23 a :Cl_Track ;
+#     :trackIsRecordingOf :Song23 .
+
+# :Track24 a :Cl_Track ;
+#     :trackIsRecordingOf :Song24 .
+
+# :Track25 a :Cl_Track ;
+#     :trackIsRecordingOf :Song25 .
+
+# :Track26 a :Cl_Track ;
+#     :trackIsRecordingOf :Song26 .
+
+# :Track27 a :Cl_Track ;
+#     :trackIsRecordingOf :Song27 .
+
+# :Track28 a :Cl_Track ;
+#     :trackIsRecordingOf :Song28 .
+
+# :Song1 a :Cl_Song ;
+#     :songComposedDate "2004-01-01"^^xsd:date .
+
+# :Song2 a :Cl_Song ;
+#     :songComposedDate "2004-02-01"^^xsd:date .
+
+# :Song3 a :Cl_Song ;
+#     :songComposedDate "2004-03-01"^^xsd:date .
+
+# :Song4 a :Cl_Song ;
+#     :songComposedDate "2004-04-01"^^xsd:date .
+
+# :Song5 a :Cl_Song ;
+#     :songComposedDate "2004-05-01"^^xsd:date .
+
+# :Song6 a :Cl_Song ;
+#     :songComposedDate "2004-06-01"^^xsd:date .
+
+# :Song7 a :Cl_Song ;
+#     :songComposedDate "2004-07-01"^^xsd:date .
+
+# :Song8 a :Cl_Song ;
+#     :songComposedDate "2004-08-01"^^xsd:date .
+
+# :Song9 a :Cl_Song ;
+#     :songComposedDate "2004-09-01"^^xsd:date .
+
+# :Song10 a :Cl_Song ;
+#     :songComposedDate "2004-10-01"^^xsd:date .
+
+# :Song11 a :Cl_Song ;
+#     :songComposedDate "2004-11-01"^^xsd:date .
+
+# :Song12 a :Cl_Song ;
+#     :songComposedDate "2004-12-01"^^xsd:date .
+
+# :Song13 a :Cl_Song ;
+#     :songComposedDate "2005-01-01"^^xsd:date .
+
+# :Song14 a :Cl_Song ;
+#     :songComposedDate "2005-02-01"^^xsd:date .
+
+# :Song15 a :Cl_Song ;
+#     :songComposedDate "2005-03-01"^^xsd:date .
+
+# :Song16 a :Cl_Song ;
+#     :songComposedDate "2005-04-01"^^xsd:date .
+
+# :Song17 a :Cl_Song ;
+#     :songComposedDate "2005-05-01"^^xsd:date .
+
+# :Song18 a :Cl_Song ;
+#     :songComposedDate "2005-06-01"^^xsd:date .
+
+# :Song19 a :Cl_Song ;
+#     :songComposedDate "2005-07-01"^^xsd:date .
+
+# :Song20 a :Cl_Song ;
+#     :songComposedDate "2005-08-01"^^xsd:date .
+
+# :Song21 a :Cl_Song ;
+#     :songComposedDate "2005-09-01"^^xsd:date .
+
+# :Song22 a :Cl_Song ;
+#     :songComposedDate "2005-10-01"^^xsd:date .
+
+# :Song23 a :Cl_Song ;
+#     :songComposedDate "2005-11-01"^^xsd:date .
+
+# :Song24 a :Cl_Song ;
+#     :songComposedDate "2005-12-01"^^xsd:date .
+
+# :Song25 a :Cl_Song ;
+#     :songComposedDate "2006-01-01"^^xsd:date .
+
+# :Song26 a :Cl_Song ;
+#     :songComposedDate "2006-02-01"^^xsd:date .
+
+# :Song27 a :Cl_Song ;
+#     :songComposedDate "2006-03-01"^^xsd:date .
+
+# :Song28 a :Cl_Song ;
+#     :songComposedDate "2006-04-01"^^xsd:date .
+
+# :CrianHiatt a :Cl_Critic ;
+#     :criticReview "The most ambitious work in his twenty-three-year career" .
+
+# :PortlandPerformance a :Cl_Performance ;
+#     :performanceDate "2006-08-11"^^xsd:date ;
+#     :performanceContainsSong :Song1, :Song2, :Song3, :Song4, :Song5, :Song6, :Song7, :Song8, :Song9, :Song10, :Song11, :Song12, :Song13, :Song14, :Song15, :Song16, :Song17, :Song18, :Song19, :Song20, :Song21, :Song22, :Song23, :Song24, :Song25, :Song26, :Song27, :Song28 ;
+#     :performanceLocation :Portland .
+
+# :Portland a :Cl_City ;
+#     :cityInRegion :Oregon .
+
+# :Oregon a :Cl_Region ;
+#     :regionInCountry :US .
+
+# :US a :Cl_Country .
+
+
+# Plan 1 seems to be the most comprehensive and detailed. It has a clear structure and hierarchy, and it covers all the entities and relationships mentioned in the story. It also includes restrictions and cardinalities, which are important for answering the competency questions. The use of subclasses and inverse properties also adds depth to the ontology. Therefore, Plan 1 is the best.

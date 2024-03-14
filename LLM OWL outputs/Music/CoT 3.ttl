@@ -1,0 +1,83 @@
+# ```turtle
+@prefix : <http://www.example.org/test#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Cl_Band a rdfs:Class .
+:Cl_Member a rdfs:Class .
+:Cl_Instrument a rdfs:Class .
+:Cl_Album a rdfs:Class .
+:Cl_Track a rdfs:Class .
+:Cl_Song a rdfs:Class .
+:Cl_Critic a rdfs:Class .
+:Cl_Performance a rdfs:Class .
+:Cl_City a rdfs:Class .
+:Cl_Region a rdfs:Class .
+:Cl_Country a rdfs:Class .
+
+:Cl_Vocalist a rdfs:Class ;
+    rdfs:subClassOf :Cl_Member .
+:Cl_Guitarist a rdfs:Class ;
+    rdfs:subClassOf :Cl_Member .
+:Cl_Drummer a rdfs:Class ;
+    rdfs:subClassOf :Cl_Member .
+
+:playsInstrument a rdf:Property ;
+    rdfs:domain :Cl_Member ;
+    rdfs:range :Cl_Instrument .
+:memberOfBand a rdf:Property ;
+    rdfs:domain :Cl_Member ;
+    rdfs:range :Cl_Band .
+:recordedAlbum a rdf:Property ;
+    rdfs:domain :Cl_Band ;
+    rdfs:range :Cl_Album .
+:containsTrack a rdf:Property ;
+    rdfs:domain :Cl_Album ;
+    rdfs:range :Cl_Track .
+:composedSong a rdf:Property ;
+    rdfs:domain :Cl_Member ;
+    rdfs:range :Cl_Song .
+:criticReview a rdf:Property ;
+    rdfs:domain :Cl_Critic ;
+    rdfs:range :Cl_Album .
+:performedIn a rdf:Property ;
+    rdfs:domain :Cl_Band ;
+    rdfs:range :Cl_City .
+:locatedIn a rdf:Property ;
+    rdfs:domain :Cl_City ;
+    rdfs:range :Cl_Region .
+
+:composedDate a rdf:Property ;
+    rdfs:domain :Cl_Song ;
+    rdfs:range xsd:date .
+
+:Cl_City a rdfs:Class ;
+    rdfs:subClassOf :Cl_Region .
+:Cl_Region a rdfs:Class ;
+    rdfs:subClassOf :Cl_Country .
+
+:Cl_Album rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:minCardinality 1 ;
+    owl:onProperty :containsTrack
+] .
+
+:Cl_MemberInstrumentUsage a rdfs:Class .
+
+:playsInstrumentInBand a rdf:Property ;
+    rdfs:domain :Cl_MemberInstrumentUsage ;
+    rdfs:range :Cl_Band .
+
+:usesInstrument a rdf:Property ;
+    rdfs:domain :Cl_MemberInstrumentUsage ;
+    rdfs:range :Cl_Instrument .
+
+:atTime a rdf:Property ;
+    rdfs:domain :Cl_MemberInstrumentUsage ;
+    rdfs:range xsd:dateTime .
+
+:saysAboutRecord a rdf:Property ;
+    rdfs:domain :Cl_Critic ;
+    rdfs:range :Cl_Album .
+# ```

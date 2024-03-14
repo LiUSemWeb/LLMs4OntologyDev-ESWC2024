@@ -1,0 +1,277 @@
+
+# output of plan 1:
+# @prefix : <http://www.example.org/test#> .
+# @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# :Cl_Theatre a rdfs:Class .
+# :Cl_Festival a rdfs:Class .
+# :Cl_Play a rdfs:Class .
+# :Cl_Production a rdfs:Class .
+# :Cl_Actor a rdfs:Class .
+# :Cl_Role a rdfs:Class .
+# :Cl_City a rdfs:Class .
+# :Cl_Country a rdfs:Class .
+# :Cl_Review a rdfs:Class .
+# :Cl_Newspaper a rdfs:Class .
+
+# :Cl_TheatreFestival a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Festival .
+# :Cl_TheatrePlay a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Play .
+# :Cl_TheatreProduction a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Production .
+# :Cl_TheatreActor a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Actor .
+# :Cl_TheatreRole a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Role .
+# :Cl_ItalianCity a rdfs:Class ;
+#     rdfs:subClassOf :Cl_City .
+# :Cl_ItalianCountry a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Country .
+# :Cl_TheatreReview a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Review .
+# :Cl_ItalianNewspaper a rdfs:Class ;
+#     rdfs:subClassOf :Cl_Newspaper .
+
+# :hasFestival a rdf:Property ;
+#     rdfs:domain :Cl_Theatre ;
+#     rdfs:range :Cl_TheatreFestival .
+
+# :hasPlay a rdf:Property ;
+#     rdfs:domain :Cl_TheatreFestival ;
+#     rdfs:range :Cl_TheatrePlay .
+
+# :hasProduction a rdf:Property ;
+#     rdfs:domain :Cl_TheatrePlay ;
+#     rdfs:range :Cl_TheatreProduction .
+
+# :hasActor a rdf:Property ;
+#     rdfs:domain :Cl_TheatreProduction ;
+#     rdfs:range :Cl_TheatreActor .
+
+# :hasRole a rdf:Property ;
+#     rdfs:domain :Cl_TheatreActor ;
+#     rdfs:range :Cl_TheatreRole .
+
+# :isLocatedIn a rdf:Property ;
+#     rdfs:domain :Cl_Theatre ;
+#     rdfs:range :Cl_ItalianCity .
+
+# :isInCountry a rdf:Property ;
+#     rdfs:domain :Cl_ItalianCity ;
+#     rdfs:range :Cl_ItalianCountry .
+
+# :hasReview a rdf:Property ;
+#     rdfs:domain :Cl_TheatreProduction ;
+#     rdfs:range :Cl_TheatreReview .
+
+# :reviewedBy a rdf:Property ;
+#     rdfs:domain :Cl_TheatreReview ;
+#     rdfs:range :Cl_ItalianNewspaper .
+
+# :hasStartDate a rdf:Property ;
+#     rdfs:domain :Cl_TheatreFestival ;
+#     rdfs:range xsd:date .
+
+# :hasEndDate a rdf:Property ;
+#     rdfs:domain :Cl_TheatreFestival ;
+#     rdfs:range xsd:date .
+
+# :hasPremier a rdf:Property ;
+#     rdfs:domain :Cl_TheatreProduction ;
+#     rdfs:range xsd:date .
+
+# :hasStarRating a rdf:Property ;
+#     rdfs:domain :Cl_TheatreReview ;
+#     rdfs:range xsd:integer .
+
+# :hasEmploymentStartDate a rdf:Property ;
+#     rdfs:domain :Cl_TheatreActor ;
+#     rdfs:range xsd:date .
+
+# :Cl_TheatreFestivalTime a rdfs:Class ;
+#     rdfs:subClassOf :Cl_TheatreFestival .
+
+# :Cl_TheatreProductionPremier a rdfs:Class ;
+#     rdfs:subClassOf :Cl_TheatreProduction .
+
+# :Cl_TheatreActorEmployment a rdfs:Class ;
+#     rdfs:subClassOf :Cl_TheatreActor .
+
+# :hasFestivalTime a rdf:Property ;
+#     rdfs:domain :Cl_Theatre ;
+#     rdfs:range :Cl_TheatreFestivalTime .
+
+# :hasProductionPremier a rdf:Property ;
+#     rdfs:domain :Cl_TheatrePlay ;
+#     rdfs:range :Cl_TheatreProductionPremier .
+
+# :hasActorEmployment a rdf:Property ;
+#     rdfs:domain :Cl_TheatreProduction ;
+#     rdfs:range :Cl_TheatreActorEmployment .
+# output of plan 2:
+# @prefix : <http://www.example.org/test#> .
+# @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# :Cl_Theatre a rdfs:Class .
+# :Cl_Festival a rdfs:Class .
+# :Cl_Play a rdfs:Class .
+# :Cl_Production a rdfs:Class .
+# :Cl_Actor a rdfs:Class .
+# :Cl_Role a rdfs:Class .
+# :Cl_Review a rdfs:Class .
+# :Cl_City a rdfs:Class .
+# :Cl_Country a rdfs:Class .
+
+# :Cl_Theatre rdfs:subClassOf :Cl_City .
+# :Cl_Festival rdfs:subClassOf :Cl_City .
+# :Cl_Production rdfs:subClassOf :Cl_Theatre .
+# :Cl_Play rdfs:subClassOf :Cl_Production .
+# :Cl_Actor rdfs:subClassOf :Cl_Production .
+# :Cl_Role rdfs:subClassOf :Cl_Actor .
+# :Cl_Review rdfs:subClassOf :Cl_Production .
+# :Cl_City rdfs:subClassOf :Cl_Country .
+
+# :hasTheatre a rdf:Property ; rdfs:domain :Cl_City ; rdfs:range :Cl_Theatre .
+# :hasFestival a rdf:Property ; rdfs:domain :Cl_City ; rdfs:range :Cl_Festival .
+# :hasProduction a rdf:Property ; rdfs:domain :Cl_Theatre ; rdfs:range :Cl_Production .
+# :hasPlay a rdf:Property ; rdfs:domain :Cl_Production ; rdfs:range :Cl_Play .
+# :hasActor a rdf:Property ; rdfs:domain :Cl_Production ; rdfs:range :Cl_Actor .
+# :hasRole a rdf:Property ; rdfs:domain :Cl_Actor ; rdfs:range :Cl_Role .
+# :hasReview a rdf:Property ; rdfs:domain :Cl_Production ; rdfs:range :Cl_Review .
+# :locatedIn a rdf:Property ; rdfs:domain :Cl_City ; rdfs:range :Cl_Country .
+
+# :hasName a rdf:Property ; rdfs:domain :Cl_Theatre ; rdfs:range xsd:string .
+# :hasDate a rdf:Property ; rdfs:domain :Cl_Festival ; rdfs:range xsd:date .
+# :hasPlayName a rdf:Property ; rdfs:domain :Cl_Play ; rdfs:range xsd:string .
+# :hasPremier a rdf:Property ; rdfs:domain :Cl_Production ; rdfs:range xsd:date .
+# :hasActorName a rdf:Property ; rdfs:domain :Cl_Actor ; rdfs:range xsd:string .
+# :hasRoleName a rdf:Property ; rdfs:domain :Cl_Role ; rdfs:range xsd:string .
+# :hasReviewRating a rdf:Property ; rdfs:domain :Cl_Review ; rdfs:range xsd:integer .
+# :hasCityName a rdf:Property ; rdfs:domain :Cl_City ; rdfs:range xsd:string .
+# :hasCountryName a rdf:Property ; rdfs:domain :Cl_Country ; rdfs:range xsd:string .
+
+# :hasEmploymentStart a rdf:Property ; rdfs:domain :Cl_Actor ; rdfs:range xsd:date .
+# :hasNumberOfActs a rdf:Property ; rdfs:domain :Cl_Play ; rdfs:range xsd:integer .
+# :hasAuthor a rdf:Property ; rdfs:domain :Cl_Play ; rdfs:range xsd:string .
+# :hasWritingPeriod a rdf:Property ; rdfs:domain :Cl_Play ; rdfs:range xsd:string .
+# output of plan 3:
+# @prefix : <http://www.example.org/test#> .
+# @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# :Cl_Theatre a rdfs:Class .
+# :Cl_Festival a rdfs:Class .
+# :Cl_Play a rdfs:Class .
+# :Cl_Production a rdfs:Class .
+# :Cl_Actor a rdfs:Class .
+# :Cl_Role a rdfs:Class .
+# :Cl_City a rdfs:Class .
+# :Cl_Country a rdfs:Class .
+# :Cl_Review a rdfs:Class .
+# :Cl_Newspaper a rdfs:Class .
+
+# :Cl_Theatre rdfs:subClassOf :Cl_City .
+# :Cl_Festival rdfs:subClassOf :Cl_City .
+# :Cl_Production rdfs:subClassOf :Cl_Theatre .
+# :Cl_Actor rdfs:subClassOf :Cl_Production .
+# :Cl_Role rdfs:subClassOf :Cl_Actor .
+# :Cl_Play rdfs:subClassOf :Cl_Production .
+# :Cl_Review rdfs:subClassOf :Cl_Newspaper .
+# :Cl_City rdfs:subClassOf :Cl_Country .
+
+# :hasTheatre a rdf:Property ; rdfs:domain :Cl_City ; rdfs:range :Cl_Theatre .
+# :hasFestival a rdf:Property ; rdfs:domain :Cl_City ; rdfs:range :Cl_Festival .
+# :hasProduction a rdf:Property ; rdfs:domain :Cl_Theatre ; rdfs:range :Cl_Production .
+# :hasActor a rdf:Property ; rdfs:domain :Cl_Production ; rdfs:range :Cl_Actor .
+# :hasRole a rdf:Property ; rdfs:domain :Cl_Actor ; rdfs:range :Cl_Role .
+# :hasPlay a rdf:Property ; rdfs:domain :Cl_Production ; rdfs:range :Cl_Play .
+# :hasReview a rdf:Property ; rdfs:domain :Cl_Newspaper ; rdfs:range :Cl_Review .
+# :locatedIn a rdf:Property ; rdfs:domain :Cl_City ; rdfs:range :Cl_Country .
+
+# :hasPremier a rdf:Property ; rdfs:domain :Cl_Production ; rdfs:range xsd:date .
+# :hasStarRating a rdf:Property ; rdfs:domain :Cl_Review ; rdfs:range xsd:integer .
+# :hasEmploymentStart a rdf:Property ; rdfs:domain :Cl_Actor ; rdfs:range xsd:date .
+# :hasAuthor a rdf:Property ; rdfs:domain :Cl_Play ; rdfs:range xsd:string .
+# :hasWrittenPeriod a rdf:Property ; rdfs:domain :Cl_Play ; rdfs:range xsd:string .
+# :hasActCount a rdf:Property ; rdfs:domain :Cl_Play ; rdfs:range xsd:integer .
+
+# :Cl_Production rdfs:subClassOf [
+#   rdf:type owl:Restriction ;
+#   owl:onProperty :hasPremier ;
+#   owl:cardinality "1"^^xsd:nonNegativeInteger
+# ] .
+
+@prefix : <http://www.example.org/test#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Classes
+:Cl_Theatre a rdfs:Class .
+:Cl_Festival a rdfs:Class .
+:Cl_Play a rdfs:Class .
+:Cl_Production a rdfs:Class .
+:Cl_Actor a rdfs:Class .
+:Cl_Role a rdfs:Class .
+:Cl_City a rdfs:Class .
+:Cl_Country a rdfs:Class .
+:Cl_Review a rdfs:Class .
+:Cl_Newspaper a rdfs:Class .
+
+# Subclasses
+:Cl_TheatreFestival a rdfs:Class ; rdfs:subClassOf :Cl_Festival .
+:Cl_TheatrePlay a rdfs:Class ; rdfs:subClassOf :Cl_Play .
+:Cl_TheatreProduction a rdfs:Class ; rdfs:subClassOf :Cl_Production .
+:Cl_TheatreActor a rdfs:Class ; rdfs:subClassOf :Cl_Actor .
+:Cl_TheatreRole a rdfs:Class ; rdfs:subClassOf :Cl_Role .
+:Cl_ItalianCity a rdfs:Class ; rdfs:subClassOf :Cl_City .
+:Cl_ItalianCountry a rdfs:Class ; rdfs:subClassOf :Cl_Country .
+:Cl_TheatreReview a rdfs:Class ; rdfs:subClassOf :Cl_Review .
+:Cl_ItalianNewspaper a rdfs:Class ; rdfs:subClassOf :Cl_Newspaper .
+
+# Properties
+:hasFestival a rdf:Property ; rdfs:domain :Cl_Theatre ; rdfs:range :Cl_TheatreFestival .
+:hasPlay a rdf:Property ; rdfs:domain :Cl_TheatreFestival ; rdfs:range :Cl_TheatrePlay .
+:hasProduction a rdf:Property ; rdfs:domain :Cl_TheatrePlay ; rdfs:range :Cl_TheatreProduction .
+:hasActor a rdf:Property ; rdfs:domain :Cl_TheatreProduction ; rdfs:range :Cl_TheatreActor .
+:hasRole a rdf:Property ; rdfs:domain :Cl_TheatreActor ; rdfs:range :Cl_TheatreRole .
+:isLocatedIn a rdf:Property ; rdfs:domain :Cl_Theatre ; rdfs:range :Cl_ItalianCity .
+:isInCountry a rdf:Property ; rdfs:domain :Cl_ItalianCity ; rdfs:range :Cl_ItalianCountry .
+:hasReview a rdf:Property ; rdfs:domain :Cl_TheatreProduction ; rdfs:range :Cl_TheatreReview .
+:reviewedBy a rdf:Property ; rdfs:domain :Cl_TheatreReview ; rdfs:range :Cl_ItalianNewspaper .
+:hasStartDate a rdf:Property ; rdfs:domain :Cl_TheatreFestival ; rdfs:range xsd:date .
+:hasEndDate a rdf:Property ; rdfs:domain :Cl_TheatreFestival ; rdfs:range xsd:date .
+:hasPremier a rdf:Property ; rdfs:domain :Cl_TheatreProduction ; rdfs:range xsd:date .
+:hasStarRating a rdf:Property ; rdfs:domain :Cl_TheatreReview ; rdfs:range xsd:integer .
+:hasEmploymentStartDate a rdf:Property ; rdfs:domain :Cl_TheatreActor ; rdfs:range xsd:date .
+
+:Cl_TheatreFestivalTime a rdfs:Class ; rdfs:subClassOf :Cl_TheatreFestival .
+:Cl_TheatreProductionPremier a rdfs:Class ; rdfs:subClassOf :Cl_TheatreProduction .
+:Cl_TheatreActorEmployment a rdfs:Class ; rdfs:subClassOf :Cl_TheatreActor .
+
+:hasFestivalTime a rdf:Property ; rdfs:domain :Cl_Theatre ; rdfs:range :Cl_TheatreFestivalTime .
+:hasProductionPremier a rdf:Property ; rdfs:domain :Cl_TheatrePlay ; rdfs:range :Cl_TheatreProductionPremier .
+:hasActorEmployment a rdf:Property ; rdfs:domain :Cl_TheatreProduction ; rdfs:range :Cl_TheatreActorEmployment .
+
+:hasName a rdf:Property ; rdfs:domain :Cl_Theatre ; rdfs:range xsd:string .
+:hasDate a rdf:Property ; rdfs:domain :Cl_Festival ; rdfs:range xsd:date .
+:hasPlayName a rdf:Property ; rdfs:domain :Cl_Play ; rdfs:range xsd:string .
+:hasActorName a rdf:Property ; rdfs:domain :Cl_Actor ; rdfs:range xsd:string .
+:hasRoleName a rdf:Property ; rdfs:domain :Cl_Role ; rdfs:range xsd:string .
+:hasCityName a rdf:Property ; rdfs:domain :Cl_City ; rdfs:range xsd:string .
+:hasCountryName a rdf:Property ; rdfs:domain :Cl_Country ; rdfs:range xsd:string .
+:hasNumberOfActs a rdf:Property ; rdfs:domain :Cl_Play ; rdfs:range xsd:integer .
+:hasAuthor a rdf:Property ; rdfs:domain :Cl_Play ; rdfs:range xsd:string .
+:hasWritingPeriod a rdf:Property ; rdfs:domain :Cl_Play ; rdfs:range xsd:string .
+
+:Cl_Production rdfs:subClassOf [
+  rdf:type owl:Restriction ;
+  owl:onProperty :hasPremier ;
+  owl:cardinality "1"^^xsd:nonNegativeInteger
+] .
