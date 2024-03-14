@@ -1,13 +1,13 @@
 # Navigating Ontology Development with Large Language Models
 
-This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various [prompting techniques](Prompts) and [models](LLM%20Models/README.MD) for ontology development, focusing on creating a tool that helps ontologists by providing modelling suggestions.
+This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various [prompting techniques](Prompts) and [models](LLM_Models/README.MD) for ontology development, focusing on creating a tool that helps ontologists by providing modelling suggestions.
 We compared students' submissions of the ontology stories with LLMs to have a comparison baseline [click here to see the results](ExperimentResult/Readme.md). There were 10 groups of students (~2 students per group) and three submissions per story to pass the task (stories were in a master course)
 ## Contents
 ### Prompts
   - [Zero-Shot Prompting](Prompts/Zeroshot.md)
   - [Sub-task Decomposed Prompting: Waterfall approach](Prompts/waterfall.md)
   - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)](Prompts/CQbyCQ.md)
-  - [Chain of Thoughts](Prompts/Prompts/CoT.md)
+  - [Chain of Thoughts](Prompts/CoT.md)
   - [Self Consistency with Chain of Thoughts (CoT-SC)](Prompts/CoTSC.md)
   - [Graph of Thoughts (GoT)](Prompts/GoT.md)<hr>
 ### [Models](Models/README.md#large-language-models)
