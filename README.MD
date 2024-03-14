@@ -4,12 +4,12 @@ This repository contains documentation and implementations related to the paper 
 We compared students' submissions of the ontology stories with LLMs to have a comparison baseline [click here to see the results](ExperimentResult/Readme.md). There were 10 groups of students (~2 students per group) and three submissions per story to pass the task (stories were in a master course)
 ## Contents
 ### Prompts
-  - [Zero Shot Prompting](Prompts/README.md#zero-shot)
-  - [Sub-task Decomposed Prompting: Waterfall approach](Prompts/README.md#sub-task-decomposed-prompting---waterfall)
-  - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)](Prompts/README.md#sub-task-decomposed-prompting---competency-question-by-competency-question)
-  - [Chain of Thoughts](Prompts/README.md#chain-of-thoughts-cot)
-  - [Self Consistency with Chain of Thoughts (CoT-SC)](Prompts/README.md#self-consistency-with-chain-of-thoughts-cot-sc)
-  - [Graph of Thoughts (GoT)](Prompts/README.md#graph-of-thoughts-got) <hr>
+  - [Zero-Shot Prompting](Zeroshot.md)
+  - [Sub-task Decomposed Prompting: Waterfall approach](waterfall.md)
+  - [Sub-task Decomposed Prompting: Competency Question by Competency Question (CQbyCQ)](CQbyCQ.md)
+  - [Chain of Thoughts](CoT.md)
+  - [Self Consistency with Chain of Thoughts (CoT-SC)](CoTSC.md)
+  - [Graph of Thoughts (GoT)](GoT.md)<hr>
 ### [Models](Models/README.md#large-language-models)
 Here is the list of models used in the experiments. [Click here to see more details](Models/README.md#large-language-models)
 
