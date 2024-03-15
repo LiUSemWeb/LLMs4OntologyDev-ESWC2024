@@ -41,7 +41,7 @@ Conversely, in criteria involving the expression of domain and range for propert
 Considering the overall performance in phase two, **it was decided to proceed exclusively with GPT-4 in the subsequent phases of our research**. Again, it is worth noting that the purpose of the study is to explore the feasibility of LLMs to assist in OWL modeling, not to compare and quantify the capabilities of different models. %This decision was informed by the comparative analysis, which clearly indicated GPT-4’s superior capability in handling the complexities of ontology generation. The advanced performance of GPT-4 in meeting the set criteria reinforces its suitability for more sophisticated applications in ontology engineering and related fields.
 
 
-![image](https://github.com/saeedizade/LLMsOntology/blob/main/ExperimentResult/images/excel%2C%20phase2.jpg)
+![image](images/excel%2C%20phase2.jpg)
 
 This table shows binary criteria (pass or fail) on some tasks (columns) for each pair of LLMs and Prompting Techniques). We took an average of each row and presented them as a final score. At the end, we proceed the experiment with GPT-4 and only removed the Waterfall and Tree.
 
