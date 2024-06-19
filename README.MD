@@ -13,7 +13,7 @@ We compared students' submissions of the ontology stories with LLMs to have a co
   - [Self Consistency with Chain of Thoughts (CoT-SC)](Prompts/CoTSC.md)
   - [Graph of Thoughts (GoT)](Prompts/GoT.md)<hr>
 ### [Models](Models/README.md#large-language-models)
-Here is the list of models used in the experiments. [Click here to see more details](Models/README.md#large-language-models)
+Here is the list of models used in the experiments. [Click here to see more details](LLM_Models/README.md#large-language-models)
 
   - Open-Source Models
     - Lama-7B
