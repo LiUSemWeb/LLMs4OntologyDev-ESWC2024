@@ -1,5 +1,6 @@
 Supplementary materials for the paper:
 ## Navigating Ontology Development with Large Language Models @ ESWC2024 [See the PDF](https://2024.eswc-conferences.org/wp-content/uploads/2024/04/146640137.pdf)
+videos of the presentations will be uploaded [here](https://videolectures.net/eswc2024_heraklion/)
 
 This repository contains documentation and implementations related to the paper "Navigating Ontology Development with Large Language Models." The paper explores various [prompting techniques](Prompts) and [models](LLM_Models) for ontology development, focusing on creating a tool that helps ontologists by providing modelling suggestions.
 
